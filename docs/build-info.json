@@ -1,0 +1,39 @@
+{
+  "version": "1.0.0",
+  "date": "2026-09-16",
+  "delivery": "local only",
+  "files": {
+    "dist/index.html": {
+      "bytes": 75403,
+      "sha256": "391bc5bf776381e354aaac77e0345bf542cf0fe5a1afdde73cbc63b32f10a3bb"
+    },
+    "src/core.js": {
+      "bytes": 15701,
+      "sha256": "5e60d6ca31b1db0375537d99e58e70e81ca23ae92f9385b0ff3ee0b515066b54"
+    },
+    "src/renderer.js": {
+      "bytes": 19591,
+      "sha256": "8c0a9f4bf667519c98c1de32997944b030d82b330324d78dc221214f0bef3820"
+    },
+    "src/app.js": {
+      "bytes": 22761,
+      "sha256": "0aa101f674c4bfde52a140e0fc4ad18c31b43e27e99bec209109a94225bee478"
+    },
+    "src/style.css": {
+      "bytes": 14303,
+      "sha256": "a2f8aaa27f7ec2a933f35e81c5c1fe7ddec1507545782ee41249826d77878d41"
+    },
+    "src/shell.html": {
+      "bytes": 3117,
+      "sha256": "66a39d492a0e4fe904df9477e552c025af66d551f54793c5721d9b21d27252fa"
+    },
+    "tests/verify.cjs": {
+      "bytes": 11000,
+      "sha256": "d1bef745cdc35fd8272058a041a733366d4ec10f85f63559917bc89b7443cf4f"
+    },
+    "tests/app-flow.cjs": {
+      "bytes": 9082,
+      "sha256": "e008944069acbd36f7129228183c22b94fcfeaaa2b61ab2a39b8986c60b42b8e"
+    }
+  }
+}
