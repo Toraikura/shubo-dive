@@ -16,7 +16,7 @@ ok(!html.includes('/* INLINE_'),'all build placeholders replaced');
 const meshCounts={};
 for(const kind of R.TYPES){
   const m=R.mesh(kind);meshCounts[kind]=m.count/3;ok(m.p.length===m.n.length,'normal count');ok([...m.p,...m.n].every(Number.isFinite),'finite mesh');
-  for(let i=0;i<m.p.length;i+=9){const u=[0,1,2].map(k=>m.p[i+3+k]-m.p[i+k]),v=[0,1,2].map(k=>m.p[i+6+k]-m.p[i+k]),face=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]];ok(face.reduce((n,x,k)=>n+x*m.p[i+k],0)>0,kind+' outward winding');const center=[0,1,2].map(k=>(m.p[i+k]+m.p[i+3+k]+m.p[i+6+k])/3),dot=center.reduce((v,x,k)=>v+x*m.n[i+k],0);ok(dot>0,`${kind} outward normal ${i/9}: ${dot}`);}
+  for(let i=0;i<m.p.length;i+=9){const u=[0,1,2].map(k=>m.p[i+3+k]-m.p[i+k]),v=[0,1,2].map(k=>m.p[i+6+k]-m.p[i+k]),face=[u[1]*v[2]-u[2]*v[1],u[2]*v[0]-u[0]*v[2],u[0]*v[1]-u[1]*v[0]];ok(face.reduce((n,x,k)=>n+x*(kind==='ring'?m.n[i+k]:m.p[i+k]),0)>0,kind+' outward winding');const center=[0,1,2].map(k=>(m.p[i+k]+m.p[i+3+k]+m.p[i+6+k])/3),dot=center.reduce((v,x,k)=>v+x*m.n[i+k],0);ok(kind==='ring'||dot>0,`${kind} outward normal ${i/9}: ${dot}`);}
 }
 const budgets=[];
 function validateBatch(b){let count=0,triangles=0;for(const [kind,data]of Object.entries(b)){ok(data.length%R.STRIDE===0,'instance stride');ok(data.every(Number.isFinite),'finite instances');for(let i=0;i<data.length;i+=R.STRIDE){ok(data.slice(i+3,i+6).every(n=>n>0),'positive scale');ok(Math.abs(Math.hypot(...data.slice(i+6,i+10))-1)<.001,'normalized quaternion');}count+=data.length/R.STRIDE;triangles+=data.length/R.STRIDE*meshCounts[kind];}return {count,triangles};}

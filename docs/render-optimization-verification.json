@@ -1,0 +1,5 @@
+{
+  "checks": 18146,
+  "baseline": "2010fee",
+  "scope": "Node shape/animation data invariants, conservative frustum bounds, reusable arrays and synthetic resolution controller samples; no GPU/FPS/visual validation."
+}

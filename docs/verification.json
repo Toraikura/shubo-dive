@@ -1,38 +1,43 @@
 {
-  "checks": 26890,
-  "bytes": 97862,
+  "checks": 19778,
+  "bytes": 104877,
   "meshTriangles": {
     "sphere": 168,
     "grain": 1656,
     "tube": 32,
-    "box": 12
+    "box": 12,
+    "ring": 336,
+    "sphereLow": 80,
+    "sphereTiny": 36,
+    "tubeLow": 16,
+    "grainLow": 396
   },
   "budgets": [
     {
       "stage": 0,
-      "count": 1853,
-      "triangles": 181592,
+      "count": 1826,
+      "triangles": 181032,
       "worstDynamic": {
-        "count": 1926,
-        "triangles": 81988
+        "count": 468,
+        "triangles": 51748
       }
     },
     {
       "stage": 1,
-      "count": 1853,
-      "triangles": 181592,
+      "count": 1826,
+      "triangles": 181032,
       "worstDynamic": {
-        "count": 1926,
-        "triangles": 81988
+        "count": 468,
+        "triangles": 51748
       }
     },
     {
       "stage": 2,
-      "count": 1853,
-      "triangles": 181592,
+      "count": 1826,
+      "triangles": 181032,
       "worstDynamic": {
-        "count": 1926,
-        "triangles": 81988
+        "count": 468,
+        "triangles": 51748
       }
     }
   ],

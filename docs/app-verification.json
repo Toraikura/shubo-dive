@@ -1,4 +1,4 @@
 {
-  "checks": 42,
+  "checks": 45,
   "scope": "Node application event harness with mocked elements and renderer. Not browser or WebMCP implementation validation."
 }

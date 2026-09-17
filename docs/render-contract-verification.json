@@ -1,15 +1,15 @@
 {
-  "checks": 39494,
+  "checks": 35608,
   "cases": [
     {
       "options": {},
       "mode": "webgl-instanced-3d",
-      "submittedTriangles": 189156,
-      "sceneDrawCalls": 6,
+      "submittedTriangles": 75176,
+      "sceneDrawCalls": 13,
       "resources": {
-        "Buffer": 18,
-        "Texture": 3,
-        "Framebuffer": 2,
+        "Buffer": 38,
+        "Texture": 4,
+        "Framebuffer": 3,
         "Renderbuffer": 1
       }
     },
@@ -18,13 +18,13 @@
         "instancing": false
       },
       "mode": "webgl-basic-3d",
-      "submittedTriangles": 103892,
-      "sceneDrawCalls": 1054,
+      "submittedTriangles": 49988,
+      "sceneDrawCalls": 855,
       "resources": {
-        "Buffer": 18,
-        "Texture": 3,
-        "Framebuffer": 2,
-        "Renderbuffer": 1
+        "Buffer": 38,
+        "Texture": 1,
+        "Framebuffer": 0,
+        "Renderbuffer": 0
       }
     },
     {
@@ -32,12 +32,12 @@
         "highp": false
       },
       "mode": "webgl-instanced-3d",
-      "submittedTriangles": 189156,
-      "sceneDrawCalls": 6,
+      "submittedTriangles": 75176,
+      "sceneDrawCalls": 13,
       "resources": {
-        "Buffer": 18,
-        "Texture": 3,
-        "Framebuffer": 2,
+        "Buffer": 38,
+        "Texture": 4,
+        "Framebuffer": 3,
         "Renderbuffer": 1
       }
     },
@@ -46,12 +46,12 @@
         "framebuffer": false
       },
       "mode": "webgl-instanced-3d",
-      "submittedTriangles": 189156,
-      "sceneDrawCalls": 6,
+      "submittedTriangles": 75176,
+      "sceneDrawCalls": 13,
       "resources": {
-        "Buffer": 18,
-        "Texture": 3,
-        "Framebuffer": 2,
+        "Buffer": 38,
+        "Texture": 4,
+        "Framebuffer": 3,
         "Renderbuffer": 1
       }
     }

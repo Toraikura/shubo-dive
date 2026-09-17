@@ -1,0 +1,5826 @@
+{
+  "benchmarkSha256": "c812fef0a2b6c2b7ae6ea4eb6e866ae44d979441162863356afe6fefdf235ba7",
+  "baseline": "2010fee",
+  "coreSha256": "f4e641d3b7a8fb76559fdafc38ef08d19c07fe5d61a2d89e9496d9be69d75623",
+  "method": {
+    "kind": "Node CPU code count and buildDynamic microbenchmark; not GPU or FPS",
+    "gpuUsed": false,
+    "browserUsed": false,
+    "fixtureSeed": 941,
+    "profiles": [
+      {
+        "name": "combat",
+        "enemies": 6,
+        "bullets": 24,
+        "drops": 8,
+        "effects": 6
+      },
+      {
+        "name": "limit-stress",
+        "enemies": 12,
+        "bullets": 96,
+        "drops": 32,
+        "effects": 24
+      }
+    ],
+    "viewportCount": 2,
+    "poseCount": 6,
+    "sectors": 3,
+    "qualities": 3,
+    "caseCount": 216,
+    "warmup": 20,
+    "samples": 7,
+    "iterations": 30,
+    "measurement": "Median of 7 batch means in ms/buildDynamic; load, camera, GL sink and counting excluded from timing. Geometry and uploads include first and steady identical-frame counters.",
+    "timingCaveat": "Node JIT, GC, host load and measurement order affect results. Compare repeated paired runs; these times do not predict browser/GPU FPS.",
+    "submittedCaveat": "renderer.stats and explicit CPU command-sink counts only; no driver, GPU rasterization, visual check or framebuffer validation.",
+    "fixtureCaveat": "Synthetic deterministic render fixtures, including upper-limit stress; not a recorded normal gameplay distribution."
+  },
+  "host": {
+    "node": "v26.7.0",
+    "cpu": "Apple M4",
+    "arch": "arm64"
+  },
+  "old": {
+    "path": "/private/tmp/shubo-render-baseline-final.json",
+    "sha256": "329252bd09932dbeee31b4ebc113ae6430f1da7b51817bbeb3dbc6ef1d85b18b",
+    "node": "v26.7.0"
+  },
+  "new": {
+    "path": "/private/tmp/shubo-render-optimized-final.json",
+    "sha256": "cb54d5d5e6ff9ef9dd8467d4157bb78383e3be12fedd3328d12d6125a4fc48c3",
+    "node": "v26.7.0"
+  },
+  "measurement": "CPU code counts and Node buildDynamic times only; not GPU/FPS or visual QA",
+  "timingWarning": "Single paired run can be affected by JIT, GC, process order and host load. Deterministic counts are separate from noisy timings.",
+  "summary": [
+    {
+      "quality": "low",
+      "profile": "combat",
+      "cases": 36,
+      "submittedTriangles": {
+        "oldMean": 119348,
+        "newMean": 20868.222222222223,
+        "changePct": -82.51481195979638
+      },
+      "submittedInstances": {
+        "oldMean": 1361.3333333333333,
+        "newMean": 278.80555555555554,
+        "changePct": -79.51967025791707
+      },
+      "bufferUploadBytes": {
+        "oldMean": 25820,
+        "newMean": 4490,
+        "changePct": -82.61037955073587
+      },
+      "buildDynamicMedianMs": {
+        "oldMedian": 0.40641666666664,
+        "newMedian": 0.1502541666666673,
+        "medianPairedChangePct": -62.84887761864102
+      }
+    },
+    {
+      "quality": "low",
+      "profile": "limit-stress",
+      "cases": 36,
+      "submittedTriangles": {
+        "oldMean": 160124,
+        "newMean": 25850.333333333332,
+        "changePct": -83.85605322541697
+      },
+      "submittedInstances": {
+        "oldMean": 2155.3333333333335,
+        "newMean": 346.02777777777777,
+        "changePct": -83.94550984637593
+      },
+      "bufferUploadBytes": {
+        "oldMean": 73460,
+        "newMean": 8523.333333333334,
+        "changePct": -88.39731373082857
+      },
+      "buildDynamicMedianMs": {
+        "oldMedian": 1.2251736333333612,
+        "newMedian": 0.33455973333334443,
+        "medianPairedChangePct": -72.52180873023832
+      }
+    },
+    {
+      "quality": "balanced",
+      "profile": "combat",
+      "cases": 36,
+      "submittedTriangles": {
+        "oldMean": 204612,
+        "newMean": 27286.666666666668,
+        "changePct": -86.66419043523025
+      },
+      "submittedInstances": {
+        "oldMean": 2283.3333333333335,
+        "newMean": 490.97222222222223,
+        "changePct": -78.49756690997567
+      },
+      "bufferUploadBytes": {
+        "oldMean": 25820,
+        "newMean": 4490,
+        "changePct": -82.61037955073587
+      },
+      "buildDynamicMedianMs": {
+        "oldMedian": 0.4081888999999743,
+        "newMedian": 0.14747360000001208,
+        "medianPairedChangePct": -63.668830468493354
+      }
+    },
+    {
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "cases": 36,
+      "submittedTriangles": {
+        "oldMean": 245388,
+        "newMean": 32309.444444444445,
+        "changePct": -86.83332337178491
+      },
+      "submittedInstances": {
+        "oldMean": 3077.3333333333335,
+        "newMean": 558.1944444444445,
+        "changePct": -81.8610990756788
+      },
+      "bufferUploadBytes": {
+        "oldMean": 73460,
+        "newMean": 8523.333333333334,
+        "changePct": -88.39731373082857
+      },
+      "buildDynamicMedianMs": {
+        "oldMedian": 1.2376319333333716,
+        "newMedian": 0.3382874999999937,
+        "medianPairedChangePct": -72.6198181013037
+      }
+    },
+    {
+      "quality": "high",
+      "profile": "combat",
+      "cases": 36,
+      "submittedTriangles": {
+        "oldMean": 204612,
+        "newMean": 27286.666666666668,
+        "changePct": -86.66419043523025
+      },
+      "submittedInstances": {
+        "oldMean": 2283.3333333333335,
+        "newMean": 490.97222222222223,
+        "changePct": -78.49756690997567
+      },
+      "bufferUploadBytes": {
+        "oldMean": 25820,
+        "newMean": 4490,
+        "changePct": -82.61037955073587
+      },
+      "buildDynamicMedianMs": {
+        "oldMedian": 0.40681526666667195,
+        "newMedian": 0.14761666666666617,
+        "medianPairedChangePct": -63.69734731357999
+      }
+    },
+    {
+      "quality": "high",
+      "profile": "limit-stress",
+      "cases": 36,
+      "submittedTriangles": {
+        "oldMean": 245388,
+        "newMean": 32309.444444444445,
+        "changePct": -86.83332337178491
+      },
+      "submittedInstances": {
+        "oldMean": 3077.3333333333335,
+        "newMean": 558.1944444444445,
+        "changePct": -81.8610990756788
+      },
+      "bufferUploadBytes": {
+        "oldMean": 73460,
+        "newMean": 8523.333333333334,
+        "changePct": -88.39731373082857
+      },
+      "buildDynamicMedianMs": {
+        "oldMedian": 1.2342263999998977,
+        "newMedian": 0.3375708333333629,
+        "medianPairedChangePct": -72.55911859047457
+      }
+    }
+  ],
+  "rows": [
+    {
+      "caseId": "low/1/combat/start-forward/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 39340,
+        "changePct": -66.94006521227604
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 745,
+        "changePct": -45.0589970501475
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.45424306666666514,
+        "new": 0.18420416666666786,
+        "changePct": -59.44810605071018
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 9660,
+        "changePct": -62.11764705882352
+      }
+    },
+    {
+      "caseId": "low/1/combat/start-forward/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 53648,
+        "changePct": -54.91613163467679
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 1026,
+        "changePct": -24.336283185840713
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40416946666666337,
+        "new": 0.15366249999999962,
+        "changePct": -61.98067576274089
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 12540,
+        "changePct": -50.82352941176471
+      }
+    },
+    {
+      "caseId": "low/1/combat/start-reverse/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 4696,
+        "changePct": -96.05364886214662
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 44,
+        "changePct": -96.7551622418879
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4047680666666641,
+        "new": 0.14746250000000033,
+        "changePct": -63.56864284913091
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1500,
+        "changePct": -94.11764705882352
+      }
+    },
+    {
+      "caseId": "low/1/combat/start-reverse/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 6852,
+        "changePct": -94.24182325456319
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 52,
+        "changePct": -96.16519174041298
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4012527666666642,
+        "new": 0.1502541666666673,
+        "changePct": -62.55373690881262
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1500,
+        "changePct": -94.11764705882352
+      }
+    },
+    {
+      "caseId": "low/1/combat/lower-look-up/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 19308,
+        "changePct": -83.77424451242058
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 183,
+        "changePct": -86.50442477876106
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.399688866666664,
+        "new": 0.14848889999999906,
+        "changePct": -62.84887761864102
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3660,
+        "changePct": -85.6470588235294
+      }
+    },
+    {
+      "caseId": "low/1/combat/lower-look-up/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 27516,
+        "changePct": -76.87653366499714
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 373,
+        "changePct": -72.49262536873155
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40171386666666725,
+        "new": 0.14731389999999844,
+        "changePct": -63.32864951305351
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 5280,
+        "changePct": -79.29411764705883
+      }
+    },
+    {
+      "caseId": "low/1/combat/upper-look-down/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 14268,
+        "changePct": -88.00968099768059
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 108,
+        "changePct": -92.03539823008849
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.404879166666664,
+        "new": 0.16430553333333364,
+        "changePct": -59.41862489837468
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 2160,
+        "changePct": -91.52941176470588
+      }
+    },
+    {
+      "caseId": "low/1/combat/upper-look-down/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 27352,
+        "changePct": -77.0143534236445
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 324,
+        "changePct": -76.10619469026548
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.404376400000001,
+        "new": 0.14494303333333391,
+        "changePct": -64.15640642398182
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 6000,
+        "changePct": -76.47058823529412
+      }
+    },
+    {
+      "caseId": "low/1/combat/deep-forward/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 8260,
+        "changePct": -93.05859020471277
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 41,
+        "changePct": -96.976401179941
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40685416666666846,
+        "new": 0.15164166666666765,
+        "changePct": -62.72825029443384
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1920,
+        "changePct": -92.47058823529412
+      }
+    },
+    {
+      "caseId": "low/1/combat/deep-forward/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 10400,
+        "changePct": -91.26021042724125
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 52,
+        "changePct": -96.16519174041298
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.39783056666666805,
+        "new": 0.14517359999999827,
+        "changePct": -63.508686319310534
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1860,
+        "changePct": -92.70588235294117
+      }
+    },
+    {
+      "caseId": "low/1/combat/cross-canyon/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 16332,
+        "changePct": -86.27516891324079
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 122,
+        "changePct": -91.00294985250737
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4023569333333323,
+        "new": 0.14523749999999988,
+        "changePct": -63.90331867857289
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3360,
+        "changePct": -86.8235294117647
+      }
+    },
+    {
+      "caseId": "low/1/combat/cross-canyon/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 118996,
+        "new": 19520,
+        "changePct": -83.59608726343743
+      },
+      "submittedInstances": {
+        "old": 1356,
+        "new": 263,
+        "changePct": -80.6047197640118
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4068763666666731,
+        "new": 0.1477263999999991,
+        "changePct": -63.6925582062569
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3240,
+        "changePct": -87.29411764705883
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/start-forward/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 53340,
+        "changePct": -66.61492626993466
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 921,
+        "changePct": -57.162790697674424
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.218675,
+        "new": 0.3342944333333321,
+        "changePct": -72.56902510239956
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 20220,
+        "changePct": -72.3543888433142
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/start-forward/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 70764,
+        "changePct": -55.709385874871685
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 1279,
+        "changePct": -40.51162790697674
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2154374999999997,
+        "new": 0.33201526666666725,
+        "changePct": -72.68347680019191
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 27720,
+        "changePct": -62.10008203445447
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/start-reverse/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 4756,
+        "changePct": -97.02325814285356
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 44,
+        "changePct": -97.95348837209302
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2095653000000008,
+        "new": 0.3323666666666668,
+        "changePct": -72.52180873023832
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1500,
+        "changePct": -97.94913863822805
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/start-reverse/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 6852,
+        "changePct": -95.71138872893874
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 52,
+        "changePct": -97.5813953488372
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2168972333333385,
+        "new": 0.3295152666666657,
+        "changePct": -72.92168495082745
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1500,
+        "changePct": -97.94913863822805
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/lower-look-up/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 24044,
+        "changePct": -84.95105525373657
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 259,
+        "changePct": -87.95348837209302
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.224023633333339,
+        "new": 0.3308041666666668,
+        "changePct": -72.97403762002537
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 8220,
+        "changePct": -88.76127973748976
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/lower-look-up/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 34980,
+        "changePct": -78.10630147960845
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 478,
+        "changePct": -77.76744186046511
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2179903000000043,
+        "new": 0.3328791666666651,
+        "changePct": -72.66980150279818
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 11580,
+        "changePct": -84.16735028712058
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/upper-look-down/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 14748,
+        "changePct": -90.76934631850386
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 114,
+        "changePct": -94.69767441860465
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2226708333333287,
+        "new": 0.32771110000000286,
+        "changePct": -73.1971115147505
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 2520,
+        "changePct": -96.55455291222313
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/upper-look-down/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 33436,
+        "changePct": -79.07267856695792
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 398,
+        "changePct": -81.48837209302326
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2314041666666677,
+        "new": 0.32977639999999914,
+        "changePct": -73.21948317807932
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 10440,
+        "changePct": -85.72600492206726
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/deep-forward/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 8260,
+        "changePct": -94.8301329394387
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 41,
+        "changePct": -98.09302325581395
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2219305666666667,
+        "new": 0.3256750000000011,
+        "changePct": -73.34750362384193
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1920,
+        "changePct": -97.3748974569319
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/deep-forward/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 10400,
+        "changePct": -93.490724282102
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 52,
+        "changePct": -97.5813953488372
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2197222333333229,
+        "new": 0.3292360999999952,
+        "changePct": -73.00728879064204
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1860,
+        "changePct": -97.45693191140279
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/cross-canyon/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 19972,
+        "changePct": -87.49968705405202
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 163,
+        "changePct": -92.4186046511628
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2311055666666713,
+        "new": 0.32690556666666454,
+        "changePct": -73.44617914840637
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 5820,
+        "changePct": -92.04265791632486
+      }
+    },
+    {
+      "caseId": "low/1/limit-stress/cross-canyon/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 159772,
+        "new": 25264,
+        "changePct": -84.18746714067547
+      },
+      "submittedInstances": {
+        "old": 2150,
+        "new": 336,
+        "changePct": -84.37209302325581
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2258124999999989,
+        "new": 0.3336847333333329,
+        "changePct": -72.77848501844016
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 7620,
+        "changePct": -89.58162428219852
+      }
+    },
+    {
+      "caseId": "low/2/combat/start-forward/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 41088,
+        "changePct": -65.5683303724064
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 799,
+        "changePct": -41.16347569955817
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4006944333333498,
+        "new": 0.144038900000002,
+        "changePct": -64.05268253872354
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 9780,
+        "changePct": -61.82669789227167
+      }
+    },
+    {
+      "caseId": "low/2/combat/start-forward/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 54216,
+        "changePct": -54.56709013508531
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 1033,
+        "changePct": -23.932253313696616
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40056389999999736,
+        "new": 0.14300833333333382,
+        "changePct": -64.29824721265827
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 12660,
+        "changePct": -50.585480093676814
+      }
+    },
+    {
+      "caseId": "low/2/combat/start-reverse/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 4932,
+        "changePct": -95.86699292729529
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 41,
+        "changePct": -96.98085419734905
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40205973333334744,
+        "new": 0.1457944333333368,
+        "changePct": -63.73811619368042
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "low/2/combat/start-reverse/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 6932,
+        "changePct": -94.19099654744745
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 45,
+        "changePct": -96.68630338733432
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40068469999999556,
+        "new": 0.144377799999999,
+        "changePct": -63.96722909559547
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "low/2/combat/lower-look-up/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 18604,
+        "changePct": -84.40988167465558
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 140,
+        "changePct": -89.69072164948454
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4063819666666556,
+        "new": 0.1432805333333363,
+        "changePct": -64.74239875637357
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3780,
+        "changePct": -85.24590163934427
+      }
+    },
+    {
+      "caseId": "low/2/combat/lower-look-up/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 28148,
+        "changePct": -76.41202695002178
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 358,
+        "changePct": -73.6377025036819
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4054166666666788,
+        "new": 0.1437528000000005,
+        "changePct": -64.54196094553022
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 5400,
+        "changePct": -78.92271662763466
+      }
+    },
+    {
+      "caseId": "low/2/combat/upper-look-down/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 16144,
+        "changePct": -86.4713572218684
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 135,
+        "changePct": -90.05891016200295
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4050694666666762,
+        "new": 0.1445985999999948,
+        "changePct": -64.30276485909954
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 2280,
+        "changePct": -91.10070257611241
+      }
+    },
+    {
+      "caseId": "low/2/combat/upper-look-down/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 25992,
+        "changePct": -78.21875104749773
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 266,
+        "changePct": -80.41237113402062
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41352916666664896,
+        "new": 0.14337776666666285,
+        "changePct": -65.32825778109105
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 6120,
+        "changePct": -76.11241217798595
+      }
+    },
+    {
+      "caseId": "low/2/combat/deep-forward/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 7992,
+        "changePct": -93.30271846612811
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 45,
+        "changePct": -96.68630338733432
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.42195000000001526,
+        "new": 0.14362219999999676,
+        "changePct": -65.96227041118816
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1680,
+        "changePct": -93.44262295081968
+      }
+    },
+    {
+      "caseId": "low/2/combat/deep-forward/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 10604,
+        "changePct": -91.11386719404686
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 66,
+        "changePct": -95.13991163475698
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40852363333333414,
+        "new": 0.15307223333333392,
+        "changePct": -62.53038481902591
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "low/2/combat/cross-canyon/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 16996,
+        "changePct": -85.75738276405322
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 128,
+        "changePct": -90.57437407952872
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40048333333331054,
+        "new": 0.14864026666666633,
+        "changePct": -62.88478088975617
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3480,
+        "changePct": -86.41686182669788
+      }
+    },
+    {
+      "caseId": "low/2/combat/cross-canyon/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 119332,
+        "new": 19084,
+        "changePct": -84.00764254349211
+      },
+      "submittedInstances": {
+        "old": 1358,
+        "new": 245,
+        "changePct": -81.95876288659794
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.3974110999999842,
+        "new": 0.14587640000001253,
+        "changePct": -63.2933252241776
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3360,
+        "changePct": -86.88524590163934
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/start-forward/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 55176,
+        "changePct": -65.53826167337047
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 975,
+        "changePct": -54.69330855018588
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2229333333333368,
+        "new": 0.33355280000000675,
+        "changePct": -72.7251853467069
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 20340,
+        "changePct": -72.23587223587224
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/start-forward/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 71288,
+        "changePct": -55.47505433832163
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 1286,
+        "changePct": -40.24163568773235
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2082139000000098,
+        "new": 0.3348721999999877,
+        "changePct": -72.28369910328088
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 27840,
+        "changePct": -61.99836199836199
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/start-reverse/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 4976,
+        "changePct": -96.89209783396208
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 41,
+        "changePct": -98.09479553903346
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.221175000000009,
+        "new": 0.3343944333333335,
+        "changePct": -72.6169931964435
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/start-reverse/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 6932,
+        "changePct": -95.67042246483624
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 45,
+        "changePct": -97.90892193308551
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.22247639999999,
+        "new": 0.3318180666666649,
+        "changePct": -72.85689386996201
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/lower-look-up/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 23340,
+        "changePct": -85.42233992055363
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 216,
+        "changePct": -89.96282527881041
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2026375000000067,
+        "new": 0.3343430666666639,
+        "changePct": -72.19918165975517
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 8340,
+        "changePct": -88.61588861588862
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/lower-look-up/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 35612,
+        "changePct": -77.75751367826717
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 463,
+        "changePct": -78.48513011152416
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.217431933333349,
+        "new": 0.3345513999999942,
+        "changePct": -72.51990925817209
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 11700,
+        "changePct": -84.02948402948402
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/upper-look-down/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 16624,
+        "changePct": -89.61700851924951
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 141,
+        "changePct": -93.44795539033457
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2210305666666499,
+        "new": 0.33451113333333826,
+        "changePct": -72.60419661347738
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 2640,
+        "changePct": -96.3963963963964
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/upper-look-down/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 32076,
+        "changePct": -79.9660229345192
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 340,
+        "changePct": -84.20074349442379
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2251736333333612,
+        "new": 0.33455973333334443,
+        "changePct": -72.6928719137467
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 10560,
+        "changePct": -85.58558558558559
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/deep-forward/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 7992,
+        "changePct": -95.00836935068828
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 45,
+        "changePct": -97.90892193308551
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2133583333333566,
+        "new": 0.33560000000000706,
+        "changePct": -72.3412292329141
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1680,
+        "changePct": -97.70679770679772
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/deep-forward/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 10604,
+        "changePct": -93.37697054488221
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 66,
+        "changePct": -96.93308550185874
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.24331526666665,
+        "new": 0.33690693333334515,
+        "changePct": -72.90253386523608
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/cross-canyon/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 20636,
+        "changePct": -87.11119994004048
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 169,
+        "changePct": -92.14684014869889
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2277833333333548,
+        "new": 0.338758333333332,
+        "changePct": -72.4089483757998
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 5940,
+        "changePct": -91.89189189189189
+      }
+    },
+    {
+      "caseId": "low/2/limit-stress/cross-canyon/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 160108,
+        "new": 24828,
+        "changePct": -84.4929672471082
+      },
+      "submittedInstances": {
+        "old": 2152,
+        "new": 318,
+        "changePct": -85.22304832713755
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.229848633333313,
+        "new": 0.335923633333338,
+        "changePct": -72.68577414906179
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 7740,
+        "changePct": -89.43488943488943
+      }
+    },
+    {
+      "caseId": "low/3/combat/start-forward/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 40636,
+        "changePct": -66.05633332219587
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 781,
+        "changePct": -42.992700729927
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.408880566666691,
+        "new": 0.15588056666667097,
+        "changePct": -61.87625938365009
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 10500,
+        "changePct": -60.1366742596811
+      }
+    },
+    {
+      "caseId": "low/3/combat/start-forward/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 53912,
+        "changePct": -54.966754652678006
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 1033,
+        "changePct": -24.598540145985403
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4129402666666768,
+        "new": 0.1522166666666635,
+        "changePct": -63.13833284039312
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 13380,
+        "changePct": -49.20273348519362
+      }
+    },
+    {
+      "caseId": "low/3/combat/start-reverse/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 4732,
+        "changePct": -96.04731197166628
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 32,
+        "changePct": -97.66423357664233
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41113333333335805,
+        "new": 0.15907499999999952,
+        "changePct": -61.30817253121697
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "low/3/combat/start-reverse/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 6708,
+        "changePct": -94.39673894884561
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 37,
+        "changePct": -97.2992700729927
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4122513666667146,
+        "new": 0.15928473333333387,
+        "changePct": -61.36223037385151
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "low/3/combat/lower-look-up/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 20160,
+        "changePct": -83.16014567810484
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 182,
+        "changePct": -86.71532846715328
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4130333333333207,
+        "new": 0.15652916666666292,
+        "changePct": -62.10253409732845
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3780,
+        "changePct": -85.6492027334852
+      }
+    },
+    {
+      "caseId": "low/3/combat/lower-look-up/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 26900,
+        "changePct": -77.53015469945538
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 356,
+        "changePct": -74.01459854014598
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41697359999998296,
+        "new": 0.1580903000000035,
+        "changePct": -62.08625677980334
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 5280,
+        "changePct": -79.95444191343964
+      }
+    },
+    {
+      "caseId": "low/3/combat/upper-look-down/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 16592,
+        "changePct": -86.14053259380535
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 150,
+        "changePct": -89.05109489051095
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40975276666667926,
+        "new": 0.1573305666666632,
+        "changePct": -61.603537677966045
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 2280,
+        "changePct": -91.34396355353076
+      }
+    },
+    {
+      "caseId": "low/3/combat/upper-look-down/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 26300,
+        "changePct": -78.03134083998798
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 303,
+        "changePct": -77.88321167883213
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41654583333329354,
+        "new": 0.15598750000000716,
+        "changePct": -62.55214012062969
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 6840,
+        "changePct": -74.03189066059225
+      }
+    },
+    {
+      "caseId": "low/3/combat/deep-forward/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 8856,
+        "changePct": -92.60249256573891
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 52,
+        "changePct": -96.2043795620438
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40863749999995586,
+        "new": 0.1558652666666603,
+        "changePct": -61.8573266852217
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 2040,
+        "changePct": -92.25512528473804
+      }
+    },
+    {
+      "caseId": "low/3/combat/deep-forward/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 9968,
+        "changePct": -91.67362758528517
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 51,
+        "changePct": -96.27737226277372
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4077041666666749,
+        "new": 0.15634026666666614,
+        "changePct": -61.65350284622315
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "low/3/combat/cross-canyon/portrait",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 17952,
+        "changePct": -85.0045106752648
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 164,
+        "changePct": -88.02919708029198
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40980280000003405,
+        "new": 0.15678750000000338,
+        "changePct": -61.74074457275783
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3240,
+        "changePct": -87.6993166287016
+      }
+    },
+    {
+      "caseId": "low/3/combat/cross-canyon/landscape",
+      "quality": "low",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 119716,
+        "new": 20316,
+        "changePct": -83.02983728156637
+      },
+      "submittedInstances": {
+        "old": 1370,
+        "new": 262,
+        "changePct": -80.87591240875912
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40641666666664,
+        "new": 0.1588596999999936,
+        "changePct": -60.912109903628284
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3360,
+        "changePct": -87.24373576309794
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/start-forward/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 54444,
+        "changePct": -66.07681379757247
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 945,
+        "changePct": -56.330868761552686
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2375555666666211,
+        "new": 0.34648473333333335,
+        "changePct": -72.00249082418203
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 20340,
+        "changePct": -72.50608272506082
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/start-forward/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 71220,
+        "changePct": -55.62395633427211
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 1286,
+        "changePct": -40.57301293900185
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2243402666666345,
+        "new": 0.34679306666666887,
+        "changePct": -71.67510731221468
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 28560,
+        "changePct": -61.394971613949714
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/start-reverse/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 4732,
+        "changePct": -97.05156643321786
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 32,
+        "changePct": -98.52125693160814
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2294110999999854,
+        "new": 0.3462611000000076,
+        "changePct": -71.83520630324456
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/start-reverse/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 6708,
+        "changePct": -95.82035241631982
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 37,
+        "changePct": -98.2902033271719
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2292847000000013,
+        "new": 0.34420416666666825,
+        "changePct": -71.99963794663124
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/lower-look-up/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 25424,
+        "changePct": -84.15871196072078
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 266,
+        "changePct": -87.7079482439926
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.248281933333298,
+        "new": 0.3474152666666669,
+        "changePct": -72.16852560391058
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 8820,
+        "changePct": -88.07785888077859
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/lower-look-up/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 34364,
+        "changePct": -78.58834085188047
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 461,
+        "changePct": -78.69685767097967
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.239477766666702,
+        "new": 0.3448305666666632,
+        "changePct": -72.17936650900904
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 11580,
+        "changePct": -84.3471208434712
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/upper-look-down/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 17072,
+        "changePct": -89.3627096677716
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 156,
+        "changePct": -92.79112754158965
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.234723599999961,
+        "new": 0.3463694333333327,
+        "changePct": -71.94761375474287
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 2640,
+        "changePct": -96.43146796431468
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/upper-look-down/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 31688,
+        "changePct": -80.25571368043268
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 365,
+        "changePct": -83.13308687615528
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2544583333333625,
+        "new": 0.3454874999999902,
+        "changePct": -72.45922875079027
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 10560,
+        "changePct": -85.72587185725872
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/deep-forward/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 8856,
+        "changePct": -94.4819679485582
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 52,
+        "changePct": -97.59704251386322
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2341305333333366,
+        "new": 0.34460696666668206,
+        "changePct": -72.0769434546026
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 2040,
+        "changePct": -97.24249797242499
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/deep-forward/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 9968,
+        "changePct": -93.78909852204471
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 51,
+        "changePct": -97.64325323475046
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.239080566666659,
+        "new": 0.34097779999998845,
+        "changePct": -72.48138586199623
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/cross-canyon/portrait",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 22384,
+        "changePct": -86.05288737133316
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 217,
+        "changePct": -89.97227356746765
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2342055666666663,
+        "new": 0.3432346999999936,
+        "changePct": -72.18982726459421
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 6420,
+        "changePct": -91.3219789132198
+      }
+    },
+    {
+      "caseId": "low/3/limit-stress/cross-canyon/landscape",
+      "quality": "low",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 160492,
+        "new": 26852,
+        "changePct": -83.26894798494628
+      },
+      "submittedInstances": {
+        "old": 2164,
+        "new": 347,
+        "changePct": -83.96487985212569
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2429305333333711,
+        "new": 0.34350556666665094,
+        "changePct": -72.36325301741397
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 8460,
+        "changePct": -88.56447688564477
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/start-forward/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 59784,
+        "changePct": -70.73142073827474
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 1519,
+        "changePct": -33.31870061457419
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4098222333333373,
+        "new": 0.14256390000000466,
+        "changePct": -65.21323432346644
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 9660,
+        "changePct": -62.11764705882352
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/start-forward/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 78504,
+        "changePct": -61.56663076471165
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 1928,
+        "changePct": -15.364354697102723
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40314443333330324,
+        "new": 0.14466666666667152,
+        "changePct": -64.11542496803693
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 12540,
+        "changePct": -50.82352941176471
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/start-reverse/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 4564,
+        "changePct": -97.76559287183002
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 38,
+        "changePct": -98.33187006145742
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4040819333333275,
+        "new": 0.14376113333334312,
+        "changePct": -64.42277630493456
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1500,
+        "changePct": -94.11764705882352
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/start-reverse/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 6600,
+        "changePct": -96.76882404778225
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 42,
+        "changePct": -98.15627743634766
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.3991527666667025,
+        "new": 0.14343193333334056,
+        "changePct": -64.0659052594998
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1500,
+        "changePct": -94.11764705882352
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/lower-look-up/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 22584,
+        "changePct": -88.94350337804758
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 238,
+        "changePct": -89.55223880597015
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40603193333336096,
+        "new": 0.1431166666666589,
+        "changePct": -64.7523618421517
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3660,
+        "changePct": -85.6470588235294
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/lower-look-up/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 38668,
+        "changePct": -81.06922549691569
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 713,
+        "changePct": -68.70061457418788
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.3988666666666783,
+        "new": 0.1490346999999929,
+        "changePct": -62.63545879993602
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 5280,
+        "changePct": -79.29411764705883
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/upper-look-down/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 20248,
+        "changePct": -90.08714383628708
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 260,
+        "changePct": -88.58647936786654
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4086888666666709,
+        "new": 0.14437776666666954,
+        "changePct": -64.67293864786757
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 2160,
+        "changePct": -91.52941176470588
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/upper-look-down/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 33884,
+        "changePct": -83.41133849015961
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 481,
+        "changePct": -78.88498683055312
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40408473333330525,
+        "new": 0.14482639999999566,
+        "changePct": -64.15939825161941
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 6000,
+        "changePct": -76.47058823529412
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/deep-forward/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 10304,
+        "changePct": -94.95544893762852
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 90,
+        "changePct": -96.04916593503073
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40926249999999226,
+        "new": 0.14348333333333965,
+        "changePct": -64.94100159840143
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1920,
+        "changePct": -92.47058823529412
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/deep-forward/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 11468,
+        "changePct": -94.38558699696465
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 77,
+        "changePct": -96.6198419666374
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4067333333333712,
+        "new": 0.14422779999998359,
+        "changePct": -64.53996066219386
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1860,
+        "changePct": -92.70588235294117
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/cross-canyon/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 20628,
+        "changePct": -89.90110643297757
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 224,
+        "changePct": -90.16681299385426
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.3961694333333071,
+        "new": 0.1426166666666783,
+        "changePct": -64.00109279842108
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3360,
+        "changePct": -86.8235294117647
+      }
+    },
+    {
+      "caseId": "balanced/1/combat/cross-canyon/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 22112,
+        "changePct": -89.17458141584255
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 338,
+        "changePct": -85.1624231782265
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40077360000001744,
+        "new": 0.14403473333334962,
+        "changePct": -64.06082303491463
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3240,
+        "changePct": -87.29411764705883
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/start-forward/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 73872,
+        "changePct": -69.85259308836253
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 1695,
+        "changePct": -44.82421875
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2318513999999898,
+        "new": 0.33532500000001164,
+        "changePct": -72.77877834940038
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 20220,
+        "changePct": -72.3543888433142
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/start-forward/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 95620,
+        "changePct": -60.977162539381965
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 2181,
+        "changePct": -29.00390625
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2235194666666454,
+        "new": 0.33406526666664527,
+        "changePct": -72.69636685252159
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 27720,
+        "changePct": -62.10008203445447
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/start-reverse/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 4564,
+        "changePct": -98.13741654287533
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 38,
+        "changePct": -98.76302083333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.231125000000005,
+        "new": 0.33523609999998977,
+        "changePct": -72.7699380647791
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1500,
+        "changePct": -97.94913863822805
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/start-reverse/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 6600,
+        "changePct": -97.30651822589334
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 42,
+        "changePct": -98.6328125
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2244722333333509,
+        "new": 0.33359583333334136,
+        "changePct": -72.75594952241575
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1500,
+        "changePct": -97.94913863822805
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/lower-look-up/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 27320,
+        "changePct": -88.85061786839485
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 314,
+        "changePct": -89.77864583333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.228487499999998,
+        "new": 0.3327597333333567,
+        "changePct": -72.91305501005445
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 8220,
+        "changePct": -88.76127973748976
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/lower-look-up/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 46116,
+        "changePct": -81.17990825837836
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 818,
+        "changePct": -73.37239583333333
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2258194333334056,
+        "new": 0.33664443333330685,
+        "changePct": -72.53719233200113
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 11580,
+        "changePct": -84.16735028712058
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/upper-look-down/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 20728,
+        "changePct": -91.54083481610866
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 266,
+        "changePct": -91.34114583333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2464430666666886,
+        "new": 0.337854166666663,
+        "changePct": -72.89453680622793
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 2520,
+        "changePct": -96.55455291222313
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/upper-look-down/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 39968,
+        "changePct": -83.68892734128863
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 555,
+        "changePct": -81.93359375
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2400861000000682,
+        "new": 0.33580973333331104,
+        "changePct": -72.92045017412157
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 10440,
+        "changePct": -85.72600492206726
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/deep-forward/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 10304,
+        "changePct": -95.79490360600074
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 90,
+        "changePct": -97.0703125
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.235300000000037,
+        "new": 0.33241110000002055,
+        "changePct": -73.09065813972228
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1920,
+        "changePct": -97.3748974569319
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/deep-forward/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 11468,
+        "changePct": -95.31987136584013
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 77,
+        "changePct": -97.49348958333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.228619466666593,
+        "new": 0.34034443333333303,
+        "changePct": -72.29862926909888
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1860,
+        "changePct": -97.45693191140279
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/cross-canyon/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 24268,
+        "changePct": -90.09614913726962
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 265,
+        "changePct": -91.37369791666666
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2232083333333625,
+        "new": 0.33491666666668607,
+        "changePct": -72.6198181013037
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 5820,
+        "changePct": -92.04265791632486
+      }
+    },
+    {
+      "caseId": "balanced/1/limit-stress/cross-canyon/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 27856,
+        "changePct": -88.63187450007347
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 411,
+        "changePct": -86.62109375
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2192124999998972,
+        "new": 0.3331569333333391,
+        "changePct": -72.67441620444612
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 7620,
+        "changePct": -89.58162428219852
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/start-forward/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 62540,
+        "changePct": -69.43244247199358
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 1598,
+        "changePct": -29.91228070175439
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4023291666667016,
+        "new": 0.1468847333333239,
+        "changePct": -63.49140318355132
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 9780,
+        "changePct": -61.82669789227167
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/start-forward/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 78320,
+        "changePct": -61.71968171420752
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 1940,
+        "changePct": -14.912280701754387
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40485833333332266,
+        "new": 0.14652776666668313,
+        "changePct": -63.80764464935793
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 12660,
+        "changePct": -50.585480093676814
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/start-reverse/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 5060,
+        "changePct": -97.52683336917633
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 45,
+        "changePct": -98.02631578947368
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4064194333333338,
+        "new": 0.14765693333332214,
+        "changePct": -63.668830468493354
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/start-reverse/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 6776,
+        "changePct": -96.68810729437526
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 41,
+        "changePct": -98.20175438596492
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4079652999999477,
+        "new": 0.14747360000001208,
+        "changePct": -63.85143540393485
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/lower-look-up/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 21168,
+        "changePct": -89.65375667168468
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 212,
+        "changePct": -90.70175438596492
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4063902666666157,
+        "new": 0.14677223333334646,
+        "changePct": -63.88392012012636
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3780,
+        "changePct": -85.24590163934427
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/lower-look-up/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 37816,
+        "changePct": -81.51674519540948
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 599,
+        "changePct": -73.7280701754386
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40983053333329733,
+        "new": 0.14672776666666323,
+        "changePct": -64.19794165327943
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 5400,
+        "changePct": -78.92271662763466
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/upper-look-down/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 21756,
+        "changePct": -89.36636102367592
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 340,
+        "changePct": -85.08771929824562
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40555416666672195,
+        "new": 0.1460875000000063,
+        "changePct": -63.97830129555573
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 2280,
+        "changePct": -91.10070257611241
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/upper-look-down/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 34072,
+        "changePct": -83.34669299497546
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 558,
+        "changePct": -75.52631578947368
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4038444333333852,
+        "new": 0.1478638666666787,
+        "changePct": -63.38593417118794
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 6120,
+        "changePct": -76.11241217798595
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/deep-forward/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 9260,
+        "changePct": -95.47400731197091
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 71,
+        "changePct": -96.8859649122807
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40410556666659736,
+        "new": 0.14855833333334278,
+        "changePct": -63.23774142514866
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1680,
+        "changePct": -93.44262295081968
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/deep-forward/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 10524,
+        "changePct": -94.85620442237385
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 67,
+        "changePct": -97.06140350877193
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4081888999999743,
+        "new": 0.1466736333333453,
+        "changePct": -64.06721659179009
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/cross-canyon/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 17664,
+        "changePct": -91.36640012512464
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 133,
+        "changePct": -94.16666666666667
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.400445833333409,
+        "new": 0.14953609999999268,
+        "changePct": -62.65759622088769
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3480,
+        "changePct": -86.41686182669788
+      }
+    },
+    {
+      "caseId": "balanced/2/combat/cross-canyon/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 26896,
+        "changePct": -86.85409294414357
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 403,
+        "changePct": -82.32456140350877
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41041250000004464,
+        "new": 0.14714723333333193,
+        "changePct": -64.14650301018709
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3360,
+        "changePct": -86.88524590163934
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/start-forward/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 77024,
+        "changePct": -68.60929527411442
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 1774,
+        "changePct": -42.29017566688354
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2352763999999297,
+        "new": 0.3399666666666538,
+        "changePct": -72.47849415186163
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 20340,
+        "changePct": -72.23587223587224
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/start-forward/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 95920,
+        "changePct": -60.908335099359334
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 2193,
+        "changePct": -28.65972674040338
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2331194333334377,
+        "new": 0.33532776666667513,
+        "changePct": -72.80654593527909
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 27840,
+        "changePct": -61.99836199836199
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/start-reverse/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 5060,
+        "changePct": -97.93782501670933
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 45,
+        "changePct": -98.53610930383864
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2360805666667147,
+        "new": 0.33706666666666935,
+        "changePct": -72.73101157349132
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/start-reverse/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 6776,
+        "changePct": -97.23847871802813
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 41,
+        "changePct": -98.66623292127521
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2427152999999331,
+        "new": 0.33951110000001183,
+        "changePct": -72.67989699651802
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/lower-look-up/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 25904,
+        "changePct": -89.44296822783365
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 288,
+        "changePct": -90.63109954456733
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2507472333333378,
+        "new": 0.3380764000000151,
+        "changePct": -72.97004614601342
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 8340,
+        "changePct": -88.61588861588862
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/lower-look-up/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 45280,
+        "changePct": -81.54638671079016
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 704,
+        "changePct": -77.09824333116461
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.243998633333346,
+        "new": 0.3364499999999983,
+        "changePct": -72.95415035155895
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 11700,
+        "changePct": -84.02948402948402
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/upper-look-down/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 22236,
+        "changePct": -90.93784131848784
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 346,
+        "changePct": -88.74430709173716
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.23776806666671,
+        "new": 0.3390250000000075,
+        "changePct": -72.60997361864436
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 2640,
+        "changePct": -96.3963963963964
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/upper-look-down/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 40156,
+        "changePct": -83.63464453971929
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 632,
+        "changePct": -79.44046844502277
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2310333333333499,
+        "new": 0.33554583333331417,
+        "changePct": -72.74274999323254
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 10560,
+        "changePct": -85.58558558558559
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/deep-forward/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 9260,
+        "changePct": -96.22613827168544
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 71,
+        "changePct": -97.69030579050097
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2331472333333902,
+        "new": 0.3382874999999937,
+        "changePct": -72.56714438830232
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1680,
+        "changePct": -97.70679770679772
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/deep-forward/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 10524,
+        "changePct": -95.71100207032586
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 67,
+        "changePct": -97.82042940793754
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2395374999998845,
+        "new": 0.3422847333333266,
+        "changePct": -72.38609293116518
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/cross-canyon/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 21304,
+        "changePct": -91.31767275809791
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 174,
+        "changePct": -94.33962264150944
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.235037500000059,
+        "new": 0.3376916666666754,
+        "changePct": -72.6573754508135
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 5940,
+        "changePct": -91.89189189189189
+      }
+    },
+    {
+      "caseId": "balanced/2/limit-stress/cross-canyon/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 32640,
+        "changePct": -86.69774872438583
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 476,
+        "changePct": -84.5152895250488
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2376319333333716,
+        "new": 0.33770833333334543,
+        "changePct": -72.71334681678907
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 7740,
+        "changePct": -89.43488943488943
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/start-forward/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 59588,
+        "changePct": -70.92984681432335
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 1481,
+        "changePct": -35.38394415357766
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4108555666666992,
+        "new": 0.15723056666665797,
+        "changePct": -61.73093918568979
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 10500,
+        "changePct": -60.1366742596811
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/start-forward/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 78640,
+        "changePct": -61.63528149087716
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 1932,
+        "changePct": -15.706806282722518
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41225969999989803,
+        "new": 0.15722916666663878,
+        "changePct": -61.861621044531475
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 13380,
+        "changePct": -49.20273348519362
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/start-reverse/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 4748,
+        "changePct": -97.68367645623964
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 33,
+        "changePct": -98.56020942408377
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4159236000000722,
+        "new": 0.15600973333333362,
+        "changePct": -62.49077154234419
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/start-reverse/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 6708,
+        "changePct": -96.72748560835204
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 36,
+        "changePct": -98.42931937172776
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40941526666671657,
+        "new": 0.15575556666666066,
+        "changePct": -61.95658067791277
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/lower-look-up/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 21016,
+        "changePct": -89.74729241877256
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 209,
+        "changePct": -90.88132635253055
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41971943333337547,
+        "new": 0.15693890000002284,
+        "changePct": -62.60861720086972
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3780,
+        "changePct": -85.6492027334852
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/lower-look-up/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 35836,
+        "changePct": -82.51731876280613
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 591,
+        "changePct": -74.21465968586386
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.418998633333346,
+        "new": 0.1552333333333384,
+        "changePct": -62.951350915305206
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 5280,
+        "changePct": -79.95444191343964
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/upper-look-down/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 18540,
+        "changePct": -90.95521514294077
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 231,
+        "changePct": -89.92146596858639
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41790556666661965,
+        "new": 0.15831113333333632,
+        "changePct": -62.11796492779729
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 2280,
+        "changePct": -91.34396355353076
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/upper-look-down/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 31680,
+        "changePct": -84.54483364230656
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 459,
+        "changePct": -79.97382198952879
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41580276666657784,
+        "new": 0.15467776666667607,
+        "changePct": -62.80020743808363
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 6840,
+        "changePct": -74.03189066059225
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/deep-forward/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 10384,
+        "changePct": -94.93413991608938
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 85,
+        "changePct": -96.29144851657941
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4191986333332655,
+        "new": 0.15445136666667167,
+        "changePct": -63.15556531314313
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 2040,
+        "changePct": -92.25512528473804
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/deep-forward/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 10564,
+        "changePct": -94.84632647087521
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 71,
+        "changePct": -96.9022687609075
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4139111333333858,
+        "new": 0.15694030000001172,
+        "changePct": -62.08357607196719
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/cross-canyon/portrait",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 19436,
+        "changePct": -90.51809932676359
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 211,
+        "changePct": -90.79406631762653
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4165846999999,
+        "new": 0.15618053333334198,
+        "changePct": -62.5092968288611
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3240,
+        "changePct": -87.6993166287016
+      }
+    },
+    {
+      "caseId": "balanced/3/combat/cross-canyon/landscape",
+      "quality": "balanced",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 23980,
+        "changePct": -88.30129768757928
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 381,
+        "changePct": -83.37696335078533
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4218416666666599,
+        "new": 0.15702776666663945,
+        "changePct": -62.77566227455594
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3360,
+        "changePct": -87.24373576309794
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/start-forward/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 73572,
+        "changePct": -70.06298930646658
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 1645,
+        "changePct": -46.694750486066106
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.254422233333268,
+        "new": 0.3472666666666858,
+        "changePct": -72.31660461374922
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 20340,
+        "changePct": -72.50608272506082
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/start-forward/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 96344,
+        "changePct": -60.796887970181814
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 2185,
+        "changePct": -29.196370706416076
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2638778000000457,
+        "new": 0.3495278000000023,
+        "changePct": -72.34481055051448
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 28560,
+        "changePct": -61.394971613949714
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/start-reverse/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 4748,
+        "changePct": -98.06800240889338
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 33,
+        "changePct": -98.93065456902139
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2521791666666104,
+        "new": 0.34975553333333664,
+        "changePct": -72.0682516812342
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/start-reverse/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 6708,
+        "changePct": -97.27046338644834
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 36,
+        "changePct": -98.83344134802333
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2538319333332766,
+        "new": 0.3452166666666623,
+        "changePct": -72.46707014799713
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/lower-look-up/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 26280,
+        "changePct": -89.30646657660444
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 293,
+        "changePct": -90.50550874918989
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.262954166666653,
+        "new": 0.3432652666666703,
+        "changePct": -72.82044940928782
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 8820,
+        "changePct": -88.07785888077859
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/lower-look-up/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 43300,
+        "changePct": -82.38089812659712
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 696,
+        "changePct": -77.44653272845106
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2474111000000752,
+        "new": 0.3446097333333152,
+        "changePct": -72.3740045817057
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 11580,
+        "changePct": -84.3471208434712
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/upper-look-down/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 19020,
+        "changePct": -92.26061622096714
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 237,
+        "changePct": -92.3201555411536
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.225722233333363,
+        "new": 0.34539026666667877,
+        "changePct": -71.82148962678218
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 2640,
+        "changePct": -96.43146796431468
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/upper-look-down/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 37068,
+        "changePct": -84.91674669184069
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 521,
+        "changePct": -83.11730395333765
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.23459166666665,
+        "new": 0.3495249999999942,
+        "changePct": -71.68901998636535
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 10560,
+        "changePct": -85.72587185725872
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/deep-forward/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 10384,
+        "changePct": -95.77467081169941
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 85,
+        "changePct": -97.2456254050551
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2469305666666817,
+        "new": 0.34663470000001934,
+        "changePct": -72.20096216530727
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 2040,
+        "changePct": -97.24249797242499
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/deep-forward/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 10564,
+        "changePct": -95.70142743208712
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 71,
+        "changePct": -97.69928710304602
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2473235999999208,
+        "new": 0.3508208333333338,
+        "changePct": -71.87411243294393
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/cross-canyon/portrait",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 23868,
+        "changePct": -90.28792786340924
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 264,
+        "changePct": -91.4452365521711
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2461750000001,
+        "new": 0.34599306666665747,
+        "changePct": -72.23559558917249
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 6420,
+        "changePct": -91.3219789132198
+      }
+    },
+    {
+      "caseId": "balanced/3/limit-stress/cross-canyon/landscape",
+      "quality": "balanced",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 30516,
+        "changePct": -87.58280570972835
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 466,
+        "changePct": -84.89954633830202
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2496139000000162,
+        "new": 0.3463041666667171,
+        "changePct": -72.28710670818302
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 8460,
+        "changePct": -88.56447688564477
+      }
+    },
+    {
+      "caseId": "high/1/combat/start-forward/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 59784,
+        "changePct": -70.73142073827474
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 1519,
+        "changePct": -33.31870061457419
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4030499999999544,
+        "new": 0.14395140000002962,
+        "changePct": -64.28448083363207
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 9660,
+        "changePct": -62.11764705882352
+      }
+    },
+    {
+      "caseId": "high/1/combat/start-forward/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 78504,
+        "changePct": -61.56663076471165
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 1928,
+        "changePct": -15.364354697102723
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.3991902666667253,
+        "new": 0.14761666666666617,
+        "changePct": -63.0209754613311
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 12540,
+        "changePct": -50.82352941176471
+      }
+    },
+    {
+      "caseId": "high/1/combat/start-reverse/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 4564,
+        "changePct": -97.76559287183002
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 38,
+        "changePct": -98.33187006145742
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4058541666666618,
+        "new": 0.1461500000000039,
+        "changePct": -63.989528258301576
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1500,
+        "changePct": -94.11764705882352
+      }
+    },
+    {
+      "caseId": "high/1/combat/start-reverse/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 6600,
+        "changePct": -96.76882404778225
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 42,
+        "changePct": -98.15627743634766
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4005764000000151,
+        "new": 0.1445139000000078,
+        "changePct": -63.92351122033091
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1500,
+        "changePct": -94.11764705882352
+      }
+    },
+    {
+      "caseId": "high/1/combat/lower-look-up/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 22584,
+        "changePct": -88.94350337804758
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 238,
+        "changePct": -89.55223880597015
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40256389999995007,
+        "new": 0.1449194666666396,
+        "changePct": -64.00087870108135
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3660,
+        "changePct": -85.6470588235294
+      }
+    },
+    {
+      "caseId": "high/1/combat/lower-look-up/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 38668,
+        "changePct": -81.06922549691569
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 713,
+        "changePct": -68.70061457418788
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4037138666666579,
+        "new": 0.14403193333334155,
+        "changePct": -64.32326327491072
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 5280,
+        "changePct": -79.29411764705883
+      }
+    },
+    {
+      "caseId": "high/1/combat/upper-look-down/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 20248,
+        "changePct": -90.08714383628708
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 260,
+        "changePct": -88.58647936786654
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40178613333325,
+        "new": 0.1450778000000355,
+        "changePct": -63.89178521506991
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 2160,
+        "changePct": -91.52941176470588
+      }
+    },
+    {
+      "caseId": "high/1/combat/upper-look-down/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 33884,
+        "changePct": -83.41133849015961
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 481,
+        "changePct": -78.88498683055312
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40581386666672187,
+        "new": 0.1444069666666716,
+        "changePct": -64.41546764954016
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 6000,
+        "changePct": -76.47058823529412
+      }
+    },
+    {
+      "caseId": "high/1/combat/deep-forward/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 10304,
+        "changePct": -94.95544893762852
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 90,
+        "changePct": -96.04916593503073
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41041943333329983,
+        "new": 0.14585969999995238,
+        "changePct": -64.4608202844283
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1920,
+        "changePct": -92.47058823529412
+      }
+    },
+    {
+      "caseId": "high/1/combat/deep-forward/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 11468,
+        "changePct": -94.38558699696465
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 77,
+        "changePct": -96.6198419666374
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41209583333329647,
+        "new": 0.14560276666670688,
+        "changePct": -64.66774112007444
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 1860,
+        "changePct": -92.70588235294117
+      }
+    },
+    {
+      "caseId": "high/1/combat/cross-canyon/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 20628,
+        "changePct": -89.90110643297757
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 224,
+        "changePct": -90.16681299385426
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4046291666666851,
+        "new": 0.14519723333329845,
+        "changePct": -64.11597450341358
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3360,
+        "changePct": -86.8235294117647
+      }
+    },
+    {
+      "caseId": "high/1/combat/cross-canyon/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 204260,
+        "new": 22112,
+        "changePct": -89.17458141584255
+      },
+      "submittedInstances": {
+        "old": 2278,
+        "new": 338,
+        "changePct": -85.1624231782265
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4011291666666997,
+        "new": 0.14376526666662054,
+        "changePct": -64.15985707016019
+      },
+      "bufferUploadBytes": {
+        "old": 25500,
+        "new": 3240,
+        "changePct": -87.29411764705883
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/start-forward/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 73872,
+        "changePct": -69.85259308836253
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 1695,
+        "changePct": -44.82421875
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.227622233333265,
+        "new": 0.33206666666665113,
+        "changePct": -72.95041930244153
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 20220,
+        "changePct": -72.3543888433142
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/start-forward/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 95620,
+        "changePct": -60.977162539381965
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 2181,
+        "changePct": -29.00390625
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2310166666667404,
+        "new": 0.33298610000001644,
+        "changePct": -72.95031748825525
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 27720,
+        "changePct": -62.10008203445447
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/start-reverse/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 4564,
+        "changePct": -98.13741654287533
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 38,
+        "changePct": -98.76302083333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2350764000000103,
+        "new": 0.3334972333333402,
+        "changePct": -72.99784585525741
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1500,
+        "changePct": -97.94913863822805
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/start-reverse/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 6600,
+        "changePct": -97.30651822589334
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 42,
+        "changePct": -98.6328125
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2327791666666599,
+        "new": 0.3368541666666715,
+        "changePct": -72.67522231272781
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1500,
+        "changePct": -97.94913863822805
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/lower-look-up/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 27320,
+        "changePct": -88.85061786839485
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 314,
+        "changePct": -89.77864583333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2300444333332659,
+        "new": 0.3331847333333523,
+        "changePct": -72.91278881442815
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 8220,
+        "changePct": -88.76127973748976
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/lower-look-up/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 46116,
+        "changePct": -81.17990825837836
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 818,
+        "changePct": -73.37239583333333
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2328541666667054,
+        "new": 0.33527360000001255,
+        "changePct": -72.80508846342313
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 11580,
+        "changePct": -84.16735028712058
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/upper-look-down/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 20728,
+        "changePct": -91.54083481610866
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 266,
+        "changePct": -91.34114583333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.233684733333333,
+        "new": 0.3318194333333546,
+        "changePct": -73.10338497609507
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 2520,
+        "changePct": -96.55455291222313
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/upper-look-down/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 39968,
+        "changePct": -83.68892734128863
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 555,
+        "changePct": -81.93359375
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2375249999999747,
+        "new": 0.3336791666666613,
+        "changePct": -73.03657165175103
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 10440,
+        "changePct": -85.72600492206726
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/deep-forward/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 10304,
+        "changePct": -95.79490360600074
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 90,
+        "changePct": -97.0703125
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2354791666666036,
+        "new": 0.33420833333329936,
+        "changePct": -72.94909195150467
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1920,
+        "changePct": -97.3748974569319
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/deep-forward/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 11468,
+        "changePct": -95.31987136584013
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 77,
+        "changePct": -97.49348958333334
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2373138666667123,
+        "new": 0.33194859999997184,
+        "changePct": -73.1718354620698
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 1860,
+        "changePct": -97.45693191140279
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/cross-canyon/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 24268,
+        "changePct": -90.09614913726962
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 265,
+        "changePct": -91.37369791666666
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2301805666667254,
+        "new": 0.3347666666666555,
+        "changePct": -72.78719273108555
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 5820,
+        "changePct": -92.04265791632486
+      }
+    },
+    {
+      "caseId": "high/1/limit-stress/cross-canyon/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 1,
+      "submittedTriangles": {
+        "old": 245036,
+        "new": 27856,
+        "changePct": -88.63187450007347
+      },
+      "submittedInstances": {
+        "old": 3072,
+        "new": 411,
+        "changePct": -86.62109375
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.23317916666662,
+        "new": 0.3334763999999874,
+        "changePct": -72.95799272206322
+      },
+      "bufferUploadBytes": {
+        "old": 73140,
+        "new": 7620,
+        "changePct": -89.58162428219852
+      }
+    },
+    {
+      "caseId": "high/2/combat/start-forward/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 62540,
+        "changePct": -69.43244247199358
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 1598,
+        "changePct": -29.91228070175439
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4034805666666216,
+        "new": 0.14591389999998985,
+        "changePct": -63.83620128090279
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 9780,
+        "changePct": -61.82669789227167
+      }
+    },
+    {
+      "caseId": "high/2/combat/start-forward/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 78320,
+        "changePct": -61.71968171420752
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 1940,
+        "changePct": -14.912280701754387
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40681526666667195,
+        "new": 0.14768473333333532,
+        "changePct": -63.69734731357999
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 12660,
+        "changePct": -50.585480093676814
+      }
+    },
+    {
+      "caseId": "high/2/combat/start-reverse/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 5060,
+        "changePct": -97.52683336917633
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 45,
+        "changePct": -98.02631578947368
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40916110000010425,
+        "new": 0.14675833333330957,
+        "changePct": -64.13189491052005
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "high/2/combat/start-reverse/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 6776,
+        "changePct": -96.68810729437526
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 41,
+        "changePct": -98.20175438596492
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4049069333331621,
+        "new": 0.14806806666668612,
+        "changePct": -63.43158032691576
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "high/2/combat/lower-look-up/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 21168,
+        "changePct": -89.65375667168468
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 212,
+        "changePct": -90.70175438596492
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4058153000000554,
+        "new": 0.14671943333335852,
+        "changePct": -63.84576103135133
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3780,
+        "changePct": -85.24590163934427
+      }
+    },
+    {
+      "caseId": "high/2/combat/lower-look-up/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 37816,
+        "changePct": -81.51674519540948
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 599,
+        "changePct": -73.7280701754386
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4069736000000072,
+        "new": 0.1483416666666623,
+        "changePct": -63.55005173144901
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 5400,
+        "changePct": -78.92271662763466
+      }
+    },
+    {
+      "caseId": "high/2/combat/upper-look-down/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 21756,
+        "changePct": -89.36636102367592
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 340,
+        "changePct": -85.08771929824562
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40464720000018134,
+        "new": 0.14599443333330175,
+        "changePct": -63.92056257074401
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 2280,
+        "changePct": -91.10070257611241
+      }
+    },
+    {
+      "caseId": "high/2/combat/upper-look-down/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 34072,
+        "changePct": -83.34669299497546
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 558,
+        "changePct": -75.52631578947368
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4080194666666406,
+        "new": 0.14784863333334214,
+        "changePct": -63.76431876125724
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 6120,
+        "changePct": -76.11241217798595
+      }
+    },
+    {
+      "caseId": "high/2/combat/deep-forward/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 9260,
+        "changePct": -95.47400731197091
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 71,
+        "changePct": -96.8859649122807
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4044888666666035,
+        "new": 0.14837500000000242,
+        "changePct": -63.31790261058057
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1680,
+        "changePct": -93.44262295081968
+      }
+    },
+    {
+      "caseId": "high/2/combat/deep-forward/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 10524,
+        "changePct": -94.85620442237385
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 67,
+        "changePct": -97.06140350877193
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40409443333313294,
+        "new": 0.14559303333335266,
+        "changePct": -63.97054219914813
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 1620,
+        "changePct": -93.6768149882904
+      }
+    },
+    {
+      "caseId": "high/2/combat/cross-canyon/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 17664,
+        "changePct": -91.36640012512464
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 133,
+        "changePct": -94.16666666666667
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40657223333328146,
+        "new": 0.14609720000001591,
+        "changePct": -64.06611469695352
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3480,
+        "changePct": -86.41686182669788
+      }
+    },
+    {
+      "caseId": "high/2/combat/cross-canyon/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 204596,
+        "new": 26896,
+        "changePct": -86.85409294414357
+      },
+      "submittedInstances": {
+        "old": 2280,
+        "new": 403,
+        "changePct": -82.32456140350877
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.40327499999984867,
+        "new": 0.1468791666666827,
+        "changePct": -63.57841010061676
+      },
+      "bufferUploadBytes": {
+        "old": 25620,
+        "new": 3360,
+        "changePct": -86.88524590163934
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/start-forward/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 77024,
+        "changePct": -68.60929527411442
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 1774,
+        "changePct": -42.29017566688354
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2308291666668083,
+        "new": 0.33920140000003207,
+        "changePct": -72.44122830476802
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 20340,
+        "changePct": -72.23587223587224
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/start-forward/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 95920,
+        "changePct": -60.908335099359334
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 2193,
+        "changePct": -28.65972674040338
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2351041666666183,
+        "new": 0.3355236333333475,
+        "changePct": -72.83438576368168
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 27840,
+        "changePct": -61.99836199836199
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/start-reverse/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 5060,
+        "changePct": -97.93782501670933
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 45,
+        "changePct": -98.53610930383864
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2213124999999612,
+        "new": 0.33475833333329014,
+        "changePct": -72.5902802654275
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/start-reverse/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 6776,
+        "changePct": -97.23847871802813
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 41,
+        "changePct": -98.66623292127521
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2280166666666144,
+        "new": 0.33428333333328436,
+        "changePct": -72.77859963898709
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/lower-look-up/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 25904,
+        "changePct": -89.44296822783365
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 288,
+        "changePct": -90.63109954456733
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2229472333332523,
+        "new": 0.33558750000004994,
+        "changePct": -72.55911859047457
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 8340,
+        "changePct": -88.61588861588862
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/lower-look-up/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 45280,
+        "changePct": -81.54638671079016
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 704,
+        "changePct": -77.09824333116461
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2242138666668325,
+        "new": 0.33552499999999175,
+        "changePct": -72.59261562577086
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 11700,
+        "changePct": -84.02948402948402
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/upper-look-down/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 22236,
+        "changePct": -90.93784131848784
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 346,
+        "changePct": -88.74430709173716
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2218083333333198,
+        "new": 0.3377110999999786,
+        "changePct": -72.35973181827626
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 2640,
+        "changePct": -96.3963963963964
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/upper-look-down/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 40156,
+        "changePct": -83.63464453971929
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 632,
+        "changePct": -79.44046844502277
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.22113470000016,
+        "new": 0.33905553333333954,
+        "changePct": -72.23438713736535
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 10560,
+        "changePct": -85.58558558558559
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/deep-forward/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 9260,
+        "changePct": -96.22613827168544
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 71,
+        "changePct": -97.69030579050097
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2296402666666837,
+        "new": 0.5666847000000417,
+        "changePct": -53.914594750852295
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1680,
+        "changePct": -97.70679770679772
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/deep-forward/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 10524,
+        "changePct": -95.71100207032586
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 67,
+        "changePct": -97.82042940793754
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2342263999998977,
+        "new": 0.3375708333333629,
+        "changePct": -72.64919683022572
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 1620,
+        "changePct": -97.78869778869779
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/cross-canyon/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 21304,
+        "changePct": -91.31767275809791
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 174,
+        "changePct": -94.33962264150944
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2360819666665823,
+        "new": 0.3367708333333212,
+        "changePct": -72.75497560719928
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 5940,
+        "changePct": -91.89189189189189
+      }
+    },
+    {
+      "caseId": "high/2/limit-stress/cross-canyon/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 2,
+      "submittedTriangles": {
+        "old": 245372,
+        "new": 32640,
+        "changePct": -86.69774872438583
+      },
+      "submittedInstances": {
+        "old": 3074,
+        "new": 476,
+        "changePct": -84.5152895250488
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2323944333331989,
+        "new": 0.338231933333312,
+        "changePct": -72.55489604748439
+      },
+      "bufferUploadBytes": {
+        "old": 73260,
+        "new": 7740,
+        "changePct": -89.43488943488943
+      }
+    },
+    {
+      "caseId": "high/3/combat/start-forward/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 59588,
+        "changePct": -70.92984681432335
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 1481,
+        "changePct": -35.38394415357766
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41907639999990354,
+        "new": 0.1564791666666982,
+        "changePct": -62.660945195975195
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 10500,
+        "changePct": -60.1366742596811
+      }
+    },
+    {
+      "caseId": "high/3/combat/start-forward/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 78640,
+        "changePct": -61.63528149087716
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 1932,
+        "changePct": -15.706806282722518
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4173138999998628,
+        "new": 0.15721249999999903,
+        "changePct": -62.3275189251902
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 13380,
+        "changePct": -49.20273348519362
+      }
+    },
+    {
+      "caseId": "high/3/combat/start-reverse/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 4748,
+        "changePct": -97.68367645623964
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 33,
+        "changePct": -98.56020942408377
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41959029999998165,
+        "new": 0.1552819333333294,
+        "changePct": -62.992010698689604
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "high/3/combat/start-reverse/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 6708,
+        "changePct": -96.72748560835204
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 36,
+        "changePct": -98.42931937172776
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4202444333333309,
+        "new": 0.15440276666668068,
+        "changePct": -63.25881929191173
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "high/3/combat/lower-look-up/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 21016,
+        "changePct": -89.74729241877256
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 209,
+        "changePct": -90.88132635253055
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41985276666649346,
+        "new": 0.1576125000000199,
+        "changePct": -62.460054449226
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3780,
+        "changePct": -85.6492027334852
+      }
+    },
+    {
+      "caseId": "high/3/combat/lower-look-up/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 35836,
+        "changePct": -82.51731876280613
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 591,
+        "changePct": -74.21465968586386
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4169277666667767,
+        "new": 0.15799863333334846,
+        "changePct": -62.10407510238423
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 5280,
+        "changePct": -79.95444191343964
+      }
+    },
+    {
+      "caseId": "high/3/combat/upper-look-down/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 18540,
+        "changePct": -90.95521514294077
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 231,
+        "changePct": -89.92146596858639
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41711526666670884,
+        "new": 0.1564916666666856,
+        "changePct": -62.48239295644662
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 2280,
+        "changePct": -91.34396355353076
+      }
+    },
+    {
+      "caseId": "high/3/combat/upper-look-down/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 31680,
+        "changePct": -84.54483364230656
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 459,
+        "changePct": -79.97382198952879
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4161069666666056,
+        "new": 0.15734446666665464,
+        "changePct": -62.1865339272912
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 6840,
+        "changePct": -74.03189066059225
+      }
+    },
+    {
+      "caseId": "high/3/combat/deep-forward/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 10384,
+        "changePct": -94.93413991608938
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 85,
+        "changePct": -96.29144851657941
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4185013999999986,
+        "new": 0.15502219999998487,
+        "changePct": -62.957782220086855
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 2040,
+        "changePct": -92.25512528473804
+      }
+    },
+    {
+      "caseId": "high/3/combat/deep-forward/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 10564,
+        "changePct": -94.84632647087521
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 71,
+        "changePct": -96.9022687609075
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.41597500000013193,
+        "new": 0.15685416666668364,
+        "changePct": -62.292405392960184
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 1620,
+        "changePct": -93.84965831435079
+      }
+    },
+    {
+      "caseId": "high/3/combat/cross-canyon/portrait",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 19436,
+        "changePct": -90.51809932676359
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 211,
+        "changePct": -90.79406631762653
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4145777666667224,
+        "new": 0.1565597333333547,
+        "changePct": -62.23634118343531
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3240,
+        "changePct": -87.6993166287016
+      }
+    },
+    {
+      "caseId": "high/3/combat/cross-canyon/landscape",
+      "quality": "high",
+      "profile": "combat",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 204980,
+        "new": 23980,
+        "changePct": -88.30129768757928
+      },
+      "submittedInstances": {
+        "old": 2292,
+        "new": 381,
+        "changePct": -83.37696335078533
+      },
+      "buildDynamicMedianMs": {
+        "old": 0.4130902666666467,
+        "new": 0.15593053333329104,
+        "changePct": -62.25267310422422
+      },
+      "bufferUploadBytes": {
+        "old": 26340,
+        "new": 3360,
+        "changePct": -87.24373576309794
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/start-forward/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 73572,
+        "changePct": -70.06298930646658
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 1645,
+        "changePct": -46.694750486066106
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2434388666665959,
+        "new": 0.3450597333333159,
+        "changePct": -72.24956187364884
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 20340,
+        "changePct": -72.50608272506082
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/start-forward/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 96344,
+        "changePct": -60.796887970181814
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 2185,
+        "changePct": -29.196370706416076
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.234833333333275,
+        "new": 0.34393333333337067,
+        "changePct": -72.14738831150869
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 28560,
+        "changePct": -61.394971613949714
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/start-reverse/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 4748,
+        "changePct": -98.06800240889338
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 33,
+        "changePct": -98.93065456902139
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2420847333332252,
+        "new": 0.34682916666667246,
+        "changePct": -72.07685133236193
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/start-reverse/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 6708,
+        "changePct": -97.27046338644834
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 36,
+        "changePct": -98.83344134802333
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.240352766666668,
+        "new": 0.34717776666669425,
+        "changePct": -72.00975593421684
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/lower-look-up/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 26280,
+        "changePct": -89.30646657660444
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 293,
+        "changePct": -90.50550874918989
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2343444333334144,
+        "new": 0.3457638666666753,
+        "changePct": -71.98805638609953
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 8820,
+        "changePct": -88.07785888077859
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/lower-look-up/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 43300,
+        "changePct": -82.38089812659712
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 696,
+        "changePct": -77.44653272845106
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2434000000001106,
+        "new": 0.34518750000000487,
+        "changePct": -72.23841885153819
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 11580,
+        "changePct": -84.3471208434712
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/upper-look-down/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 19020,
+        "changePct": -92.26061622096714
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 237,
+        "changePct": -92.3201555411536
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.234172233333326,
+        "new": 0.3454361333333509,
+        "changePct": -72.01070288217582
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 2640,
+        "changePct": -96.43146796431468
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/upper-look-down/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 37068,
+        "changePct": -84.91674669184069
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 521,
+        "changePct": -83.11730395333765
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2353361000001315,
+        "new": 0.3459194333333168,
+        "changePct": -71.99794992364588
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 10560,
+        "changePct": -85.72587185725872
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/deep-forward/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 10384,
+        "changePct": -95.77467081169941
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 85,
+        "changePct": -97.2456254050551
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2440875000000233,
+        "new": 0.34670696666671574,
+        "changePct": -72.13162525411522
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 2040,
+        "changePct": -97.24249797242499
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/deep-forward/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 10564,
+        "changePct": -95.70142743208712
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 71,
+        "changePct": -97.69928710304602
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.240909733333198,
+        "new": 0.3464430666666279,
+        "changePct": -72.08152556463153
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 1620,
+        "changePct": -97.8102189781022
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/cross-canyon/portrait",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 23868,
+        "changePct": -90.28792786340924
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 264,
+        "changePct": -91.4452365521711
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.2524472000002183,
+        "new": 0.34583053333329494,
+        "changePct": -72.38761575472125
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 6420,
+        "changePct": -91.3219789132198
+      }
+    },
+    {
+      "caseId": "high/3/limit-stress/cross-canyon/landscape",
+      "quality": "high",
+      "profile": "limit-stress",
+      "sector": 3,
+      "submittedTriangles": {
+        "old": 245756,
+        "new": 30516,
+        "changePct": -87.58280570972835
+      },
+      "submittedInstances": {
+        "old": 3086,
+        "new": 466,
+        "changePct": -84.89954633830202
+      },
+      "buildDynamicMedianMs": {
+        "old": 1.240161133333216,
+        "new": 0.3481750000000223,
+        "changePct": -71.92501920583315
+      },
+      "bufferUploadBytes": {
+        "old": 73980,
+        "new": 8460,
+        "changePct": -88.56447688564477
+      }
+    }
+  ]
+}
