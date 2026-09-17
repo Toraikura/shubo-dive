@@ -1,0 +1,297 @@
+{
+  "source": "/Users/yoshi/Documents/ChatGPT/HP制作/shubo-dive/src/core.js",
+  "sha256": "f4e641d3b7a8fb76559fdafc38ef08d19c07fe5d61a2d89e9496d9be69d75623",
+  "inputOnly": true,
+  "allowedMutators": [
+    "step",
+    "choosePerk",
+    "drain"
+  ],
+  "results": [
+    {
+      "seed": 941,
+      "status": "won",
+      "sector": 3,
+      "clock": 100.65,
+      "hp": 121,
+      "maxHp": 160,
+      "lowestHp": 102,
+      "kills": 27,
+      "saved": 9,
+      "bossSpawned": true,
+      "bossDefeated": true,
+      "bossPhases": [
+        1,
+        2
+      ],
+      "perks": {
+        "rapid": 0,
+        "hull": 2,
+        "pulse": 0
+      },
+      "counts": {
+        "boost": 18,
+        "shot": 152,
+        "hit": 144,
+        "rescue": 9,
+        "kill": 27,
+        "pulse": 6,
+        "pickup": 11,
+        "gate": 3,
+        "upgrade": 2,
+        "sector": 2,
+        "enemyShot": 29,
+        "damageTaken": 107,
+        "hits": 9,
+        "hurt": 9,
+        "boss": 1,
+        "warning": 2,
+        "bossDown": 1,
+        "won": 1
+      },
+      "controls": {
+        "frames": 6039,
+        "turn": 6039,
+        "pitch": 6039,
+        "brake": 2992,
+        "pulse": 6,
+        "boost": 18
+      },
+      "motion": {
+        "minX": -15.999224121292043,
+        "maxX": 7.524236132002213,
+        "minY": -13.915943013483561,
+        "maxY": 42.84121901955389,
+        "minZ": -100.56489206545301,
+        "maxZ": 70,
+        "distance": 727.1540411074578,
+        "ascent": 170.5207757054944,
+        "descent": 156.97555202326012,
+        "maxEnemies": 6,
+        "maxBullets": 17,
+        "terrainOverlapFrames": 0
+      },
+      "badPaths": 0,
+      "stalled": 0,
+      "stages": [
+        {
+          "sector": 1,
+          "start": 0
+        },
+        {
+          "sector": 2,
+          "start": 21.683333333333383
+        },
+        {
+          "sector": 3,
+          "start": 49.23333333333182
+        }
+      ],
+      "final": {
+        "p": {
+          "x": 0.4844376368214697,
+          "y": 19.481842508032,
+          "z": -100.42336231442127
+        },
+        "objective": {
+          "x": 0,
+          "y": 18,
+          "z": -106,
+          "kind": "exit",
+          "title": "帰還ゲート"
+        },
+        "enemies": []
+      }
+    },
+    {
+      "seed": 1842,
+      "status": "won",
+      "sector": 3,
+      "clock": 97.3,
+      "hp": 121,
+      "maxHp": 160,
+      "lowestHp": 110,
+      "kills": 27,
+      "saved": 9,
+      "bossSpawned": true,
+      "bossDefeated": true,
+      "bossPhases": [
+        1,
+        2
+      ],
+      "perks": {
+        "rapid": 0,
+        "hull": 2,
+        "pulse": 0
+      },
+      "counts": {
+        "boost": 16,
+        "shot": 153,
+        "hit": 141,
+        "rescue": 9,
+        "kill": 27,
+        "pulse": 6,
+        "pickup": 11,
+        "gate": 3,
+        "upgrade": 2,
+        "sector": 2,
+        "enemyShot": 13,
+        "damageTaken": 39,
+        "hits": 3,
+        "hurt": 3,
+        "boss": 1,
+        "warning": 2,
+        "bossDown": 1,
+        "won": 1
+      },
+      "controls": {
+        "frames": 5838,
+        "turn": 5838,
+        "pitch": 5838,
+        "brake": 2706,
+        "pulse": 6,
+        "boost": 16
+      },
+      "motion": {
+        "minX": -28.10222744053306,
+        "maxX": 7.383001379693781,
+        "minY": -14.770276140149805,
+        "maxY": 42.90380248735205,
+        "minZ": -101.39391770736789,
+        "maxZ": 70,
+        "distance": 712.7031242720591,
+        "ascent": 172.75375069136214,
+        "descent": 158.8546997928241,
+        "maxEnemies": 7,
+        "maxBullets": 16,
+        "terrainOverlapFrames": 0
+      },
+      "badPaths": 0,
+      "stalled": 0,
+      "stages": [
+        {
+          "sector": 1,
+          "start": 0
+        },
+        {
+          "sector": 2,
+          "start": 21.85000000000004
+        },
+        {
+          "sector": 3,
+          "start": 46.683333333331966
+        }
+      ],
+      "final": {
+        "p": {
+          "x": -1.518894368352491,
+          "y": 20.10104623252881,
+          "z": -100.68758078793185
+        },
+        "objective": {
+          "x": 0,
+          "y": 18,
+          "z": -106,
+          "kind": "exit",
+          "title": "帰還ゲート"
+        },
+        "enemies": []
+      }
+    },
+    {
+      "seed": 3091,
+      "status": "won",
+      "sector": 3,
+      "clock": 99.2,
+      "hp": 117,
+      "maxHp": 160,
+      "lowestHp": 110,
+      "kills": 27,
+      "saved": 9,
+      "bossSpawned": true,
+      "bossDefeated": true,
+      "bossPhases": [
+        1,
+        2
+      ],
+      "perks": {
+        "rapid": 0,
+        "hull": 2,
+        "pulse": 0
+      },
+      "counts": {
+        "boost": 18,
+        "shot": 166,
+        "hit": 156,
+        "rescue": 9,
+        "kill": 27,
+        "pickup": 13,
+        "gate": 3,
+        "upgrade": 2,
+        "sector": 2,
+        "enemyShot": 27,
+        "pulse": 5,
+        "damageTaken": 74,
+        "hits": 6,
+        "hurt": 6,
+        "boss": 1,
+        "warning": 2,
+        "bossDown": 1,
+        "won": 1
+      },
+      "controls": {
+        "frames": 5952,
+        "turn": 5952,
+        "pitch": 5952,
+        "brake": 3142,
+        "pulse": 5,
+        "boost": 18
+      },
+      "motion": {
+        "minX": -41.99488297130479,
+        "maxX": 7.7637289584063955,
+        "minY": -14.195604000361326,
+        "maxY": 42.413819387033215,
+        "minZ": -101.71571114740007,
+        "maxZ": 70,
+        "distance": 706.6433724791146,
+        "ascent": 168.51900499529074,
+        "descent": 153.36542287319492,
+        "maxEnemies": 6,
+        "maxBullets": 20,
+        "terrainOverlapFrames": 0
+      },
+      "badPaths": 0,
+      "stalled": 0,
+      "stages": [
+        {
+          "sector": 1,
+          "start": 0
+        },
+        {
+          "sector": 2,
+          "start": 19.13333333333353
+        },
+        {
+          "sector": 3,
+          "start": 46.299999999998654
+        }
+      ],
+      "final": {
+        "p": {
+          "x": -2.689905838114107,
+          "y": 20.98155669758091,
+          "z": -101.71571114740007
+        },
+        "objective": {
+          "x": 0,
+          "y": 18,
+          "z": -106,
+          "kind": "exit",
+          "title": "帰還ゲート"
+        },
+        "enemies": []
+      }
+    }
+  ]
+}

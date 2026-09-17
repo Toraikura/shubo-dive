@@ -1,0 +1,60 @@
+{
+  "checks": 39494,
+  "cases": [
+    {
+      "options": {},
+      "mode": "webgl-instanced-3d",
+      "submittedTriangles": 189156,
+      "sceneDrawCalls": 6,
+      "resources": {
+        "Buffer": 18,
+        "Texture": 3,
+        "Framebuffer": 2,
+        "Renderbuffer": 1
+      }
+    },
+    {
+      "options": {
+        "instancing": false
+      },
+      "mode": "webgl-basic-3d",
+      "submittedTriangles": 103892,
+      "sceneDrawCalls": 1054,
+      "resources": {
+        "Buffer": 18,
+        "Texture": 3,
+        "Framebuffer": 2,
+        "Renderbuffer": 1
+      }
+    },
+    {
+      "options": {
+        "highp": false
+      },
+      "mode": "webgl-instanced-3d",
+      "submittedTriangles": 189156,
+      "sceneDrawCalls": 6,
+      "resources": {
+        "Buffer": 18,
+        "Texture": 3,
+        "Framebuffer": 2,
+        "Renderbuffer": 1
+      }
+    },
+    {
+      "options": {
+        "framebuffer": false
+      },
+      "mode": "webgl-instanced-3d",
+      "submittedTriangles": 189156,
+      "sceneDrawCalls": 6,
+      "resources": {
+        "Buffer": 18,
+        "Texture": 3,
+        "Framebuffer": 2,
+        "Renderbuffer": 1
+      }
+    }
+  ],
+  "scope": "Mocked WebGL API state, typed buffer bounds, resource counts and callbacks. No actual shader compilation, rasterization, GPU, browser or device validation."
+}

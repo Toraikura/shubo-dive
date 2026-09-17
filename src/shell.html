@@ -2,19 +2,22 @@
 <html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#04121c"><meta name="description" content="米の峡谷を飛び、仲間を救う。オフラインで遊べる3D微生物シューティング。"><title>SHUBO DIVE — 酒母潜航隊</title><style>/* INLINE_CSS */</style></head>
 <body>
 <canvas id="world" aria-label="酒母の海の3Dゲーム画面"></canvas><canvas id="overlay" aria-hidden="true"></canvas><div class="vignette" aria-hidden="true"></div>
-<header class="brand"><span class="brand-mark" aria-hidden="true">◈</span><span>SHUBO <b>DIVE</b></span><span class="brand-sub">MICROCOSM / 01</span></header>
+<header class="brand"><span class="brand-mark" aria-hidden="true">◈</span><span>SHUBO <b>DIVE</b></span><span class="brand-sub">3D FLIGHT / 02</span></header>
 <main id="hud" hidden>
  <div class="top-actions"><button id="sound" class="icon" aria-label="音をオンにする" aria-pressed="false">♪</button><button id="pause" class="icon" aria-label="一時停止">Ⅱ</button></div>
  <section class="mission" aria-label="出撃目標"><div id="sectorSteps" class="steps"><span>01</span><i></i><span>02</span><i></i><span>03</span></div><h1 id="sectorTitle">米の群島</h1><p id="missionText">酵母を救出して、航路を開こう。</p><div class="mission-count"><span>救出 <b id="rescueCount">0 / 3</b></span><span>撃退 <b id="killCount">0 / 6</b></span></div></section>
- <section class="ship-status" aria-label="機体の状態"><div class="status-caption"><span>HULL / 機体耐久</span><b id="hpText">100</b></div><div class="health-track"><i id="hpBar"></i></div><div class="score-caption"><span>SCORE <b id="score">000000</b></span><span id="combo"></span></div></section>
+ <section class="ship-status" aria-label="機体の状態"><div class="status-caption"><span>HULL / 機体耐久</span><b id="hpText">110</b></div><div class="health-track"><i id="hpBar"></i></div><div class="score-caption"><span>SCORE <b id="score">000000</b></span><span id="combo"></span></div></section>
  <div id="bossHud" hidden><span>深域の主 <b id="bossPhase">PHASE 01</b></span><div><i id="bossBar"></i></div></div>
  <div id="toast" role="status" aria-live="polite"></div>
- <div id="tutorial">左のスティック / WASDで移動。近くの敵へ自動射撃。</div>
- <div id="joystick" aria-label="移動スティック"><div class="stick-cross"></div><div id="stick"></div><span>MOVE</span></div>
+ <div id="tutorial">スティックを上下左右へ。機首を向けて飛ぼう。</div>
+ <div id="joystick" aria-label="左右で旋回、上下で機首を向けるスティック"><div class="stick-cross"></div><div id="stick"></div><span>STEER</span></div>
+ <div class="flight-instruments" aria-label="高度と機首の角度"><span>ALT <b id="altitude">+14</b></span><span>PITCH <b id="pitchReadout">0°</b></span><small id="thrustState">CRUISE</small></div>
+ <button id="cruise" class="cruise-button" aria-label="前進を停止する Bキー" aria-pressed="false"><span id="cruiseLabel">停止</span><small>B / HOLD</small></button>
  <div class="abilities"><button id="pulse" class="ability" aria-label="衝撃波 Eキー"><span class="ability-symbol">◎</span><b>衝撃波</b><small id="pulseTime">E / READY</small></button><button id="boost" class="ability boost" aria-label="ブースト Spaceキー"><span class="ability-symbol">»</span><b>ブースト</b><small id="boostTime">SPACE / READY</small></button></div>
  <div class="bottom-line"><span id="flightLabel">SCOUT-01 / 潜航中</span><span id="timer">00:00</span></div>
 </main>
 <section id="menu" role="dialog" aria-modal="true" aria-labelledby="menuTitle"><div id="menuContent"></div></section>
+<section id="renderError" class="render-error" role="alertdialog" aria-modal="true" aria-labelledby="renderErrorTitle" aria-describedby="renderErrorText" hidden><div><p class="eyebrow">3D FLIGHT</p><h1 id="renderErrorTitle">3D描画を開始できませんでした</h1><p id="renderErrorText"></p><button id="reload3d" class="primary wide">再読み込み</button></div></section>
 <p id="storageNote" role="status" hidden>この環境では保存できません。終了するまで遊べます。</p>
 <noscript><div class="no-script">このゲームを遊ぶにはJavaScriptを有効にしてください。</div></noscript>
 <script id="core">/* INLINE_CORE */</script><script id="renderer">/* INLINE_RENDERER */</script><script id="app">/* INLINE_APP */</script>

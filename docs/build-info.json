@@ -1,39 +1,51 @@
 {
-  "version": "1.0.0",
-  "date": "2026-09-16",
+  "version": "2.0.0",
+  "date": "2026-09-18",
   "delivery": "local only",
   "files": {
     "dist/index.html": {
-      "bytes": 75403,
-      "sha256": "391bc5bf776381e354aaac77e0345bf542cf0fe5a1afdde73cbc63b32f10a3bb"
+      "bytes": 97862,
+      "sha256": "6a10605e8b3c0a079e666f391fd3ccbeaeb6449f6e600e1bc6d62ddf0e90048e"
     },
     "src/core.js": {
-      "bytes": 15701,
-      "sha256": "5e60d6ca31b1db0375537d99e58e70e81ca23ae92f9385b0ff3ee0b515066b54"
+      "bytes": 20247,
+      "sha256": "f4e641d3b7a8fb76559fdafc38ef08d19c07fe5d61a2d89e9496d9be69d75623"
     },
     "src/renderer.js": {
-      "bytes": 19591,
-      "sha256": "8c0a9f4bf667519c98c1de32997944b030d82b330324d78dc221214f0bef3820"
+      "bytes": 30757,
+      "sha256": "329252bd09932dbeee31b4ebc113ae6430f1da7b51817bbeb3dbc6ef1d85b18b"
     },
     "src/app.js": {
-      "bytes": 22761,
-      "sha256": "0aa101f674c4bfde52a140e0fc4ad18c31b43e27e99bec209109a94225bee478"
+      "bytes": 26332,
+      "sha256": "72d9ae12d2bf4127677c86ece8c977f28dcf7e66507cc4d0aecd8af15abf4a1e"
     },
     "src/style.css": {
-      "bytes": 14303,
-      "sha256": "a2f8aaa27f7ec2a933f35e81c5c1fe7ddec1507545782ee41249826d77878d41"
+      "bytes": 16681,
+      "sha256": "67a012b30874952cdd9efbb41228a51f7b17e7932882aef0d9609f9b22e2b4e7"
     },
     "src/shell.html": {
-      "bytes": 3117,
-      "sha256": "66a39d492a0e4fe904df9477e552c025af66d551f54793c5721d9b21d27252fa"
+      "bytes": 3915,
+      "sha256": "bdcdac51bf2971b04d19ebdcbd4415ec775efab1644366f6e5cf05ab2588fe1d"
     },
     "tests/verify.cjs": {
-      "bytes": 11000,
-      "sha256": "d1bef745cdc35fd8272058a041a733366d4ec10f85f63559917bc89b7443cf4f"
+      "bytes": 13655,
+      "sha256": "e676320b86f0cb2816fb944bc6758ab9f592549cd74f6e1c85cc4ccb05bb092d"
     },
     "tests/app-flow.cjs": {
-      "bytes": 9082,
-      "sha256": "e008944069acbd36f7129228183c22b94fcfeaaa2b61ab2a39b8986c60b42b8e"
+      "bytes": 11098,
+      "sha256": "4bfc7601365050870e82eba0a2861b20097fe06172c98caf7ddcffe982ea6fc0"
+    },
+    "tests/campaign.cjs": {
+      "bytes": 8395,
+      "sha256": "b2313ed31f1cde8c77d146391568c162ddee15cd5d24cd5e2284a255fa53a377"
+    },
+    "tests/render-contract.cjs": {
+      "bytes": 7165,
+      "sha256": "4c862e996b8573991f170a3129da164f3ab60ffe8fc6977366a36388660843ff"
     }
+  },
+  "localHTTP": {
+    "url": "http://127.0.0.1:8769/",
+    "servedBytesMatch": true
   }
 }

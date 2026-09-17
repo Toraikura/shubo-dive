@@ -1,69 +1,41 @@
 {
-  "checks": 11389,
-  "bytes": 75403,
+  "checks": 26890,
+  "bytes": 97862,
   "meshTriangles": {
-    "sphere": 100,
+    "sphere": 168,
+    "grain": 1656,
     "tube": 32,
     "box": 12
   },
   "budgets": [
     {
       "stage": 0,
-      "count": 532,
-      "triangles": 37628,
+      "count": 1853,
+      "triangles": 181592,
       "worstDynamic": {
-        "count": 934,
-        "triangles": 43020
+        "count": 1926,
+        "triangles": 81988
       }
     },
     {
       "stage": 1,
-      "count": 532,
-      "triangles": 37628,
+      "count": 1853,
+      "triangles": 181592,
       "worstDynamic": {
-        "count": 934,
-        "triangles": 43020
+        "count": 1926,
+        "triangles": 81988
       }
     },
     {
       "stage": 2,
-      "count": 557,
-      "triangles": 39312,
+      "count": 1853,
+      "triangles": 181592,
       "worstDynamic": {
-        "count": 934,
-        "triangles": 43020
+        "count": 1926,
+        "triangles": 81988
       }
     }
   ],
-  "campaigns": [
-    {
-      "seed": 941,
-      "status": "won",
-      "seconds": 76,
-      "score": 18460,
-      "rescued": 9,
-      "hp": 125,
-      "sector": 2
-    },
-    {
-      "seed": 1842,
-      "status": "won",
-      "seconds": 82,
-      "score": 15660,
-      "rescued": 9,
-      "hp": 97,
-      "sector": 2
-    },
-    {
-      "seed": 3091,
-      "status": "won",
-      "seconds": 81,
-      "score": 16280,
-      "rescued": 9,
-      "hp": 83,
-      "sector": 2
-    }
-  ],
-  "unattendedDefeatSeconds": 86,
-  "scope": "Node simulation and geometry only; no browser, shader compilation, GPU, or physical-device tests."
+  "unattendedDefeatSeconds": 40,
+  "scope": "Node XYZ simulation, geometry, camera mathematics and saves only; no browser, shader compilation, GPU or physical-device tests."
 }
