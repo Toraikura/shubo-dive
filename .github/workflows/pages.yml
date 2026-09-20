@@ -1,0 +1,55 @@
+name: Verify and publish SHUBO DIVE
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Build self-contained game
+        run: python3 build.py
+      - name: Verify checked-in build
+        run: git diff --exit-code -- dist/index.html
+      - name: Verify gameplay and rendering contracts
+        run: |
+          node tests/verify.cjs
+          node tests/app-flow.cjs
+          node tests/campaign.cjs
+          node tests/render-contract.cjs
+          node tests/render-optimization.cjs
+      - name: Upload game only
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

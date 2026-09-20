@@ -4,6 +4,14 @@
 
 ネイティブWebGL。多孔質の米、白い菌糸、紫の酵母、探索艇、霧、光、テクスチャをコードから生成する。外部依存・通信なし。配布物は全ソースを埋め込んだ **`dist/index.html` 一枚**。
 
+## ブラウザで遊ぶ
+
+**[SHUBO DIVEを開く](https://toraikura.github.io/shubo-dive/)**
+
+スマホ・PCのWebGL対応ブラウザでプレイ。ログイン・インストール不要。SATやSNSからもこのURLへリンクできます。進行と設定は利用中のブラウザに保存されます。
+
+公開先はGitHub Pages。`main`への更新時にコード検証とビルドを行い、合格した`dist/`だけを配信します。配信状態は[Actions](https://github.com/Toraikura/shubo-dive/actions/workflows/pages.yml)で確認できます。
+
 ## 起動
 
 PCでは `dist/index.html` をブラウザで開く。ローカルHTTPプレビュー：
@@ -12,7 +20,7 @@ PCでは `dist/index.html` をブラウザで開く。ローカルHTTPプレビ�
 python3 -m http.server 8769 --bind 127.0.0.1 --directory dist
 ```
 
-http://127.0.0.1:8769/ は起動したPC内のアドレス。他のスマホへの配信には別の配信先が必要。公開・ストア配信は行っていない。
+http://127.0.0.1:8769/ は起動したPC内のアドレス。別のスマホ・PCには上記の公開URLを共有してください。
 
 ## 操縦
 

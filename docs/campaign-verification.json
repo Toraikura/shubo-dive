@@ -1,5 +1,5 @@
 {
-  "source": "/Users/yoshi/Documents/ChatGPT/HP制作/shubo-dive/src/core.js",
+  "source": "src/core.js",
   "sha256": "f4e641d3b7a8fb76559fdafc38ef08d19c07fe5d61a2d89e9496d9be69d75623",
   "inputOnly": true,
   "allowedMutators": [

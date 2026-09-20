@@ -1,7 +1,7 @@
 {
   "version": "2.1.0",
-  "date": "2026-09-18",
-  "delivery": "local only",
+  "date": "2026-09-20",
+  "delivery": "GitHub Pages",
   "files": {
     "dist/index.html": {
       "bytes": 104877,
@@ -32,8 +32,8 @@
       "sha256": "27f76e9546f95aab25d30629c93d3df4afeea1099a487f56d71dfc103ef31377"
     },
     "tests/campaign.cjs": {
-      "bytes": 8395,
-      "sha256": "b2313ed31f1cde8c77d146391568c162ddee15cd5d24cd5e2284a255fa53a377"
+      "bytes": 8409,
+      "sha256": "03a8b888bf145ffe1ca110e07c50c8aef578cc6c5d7f1bf3ba2926b07610af31"
     },
     "tests/render-benchmark.cjs": {
       "bytes": 12805,
@@ -56,8 +56,5 @@
       "sha256": "a8ab6d8e775bb4fc1eea19a0c05f2bcaf1aee9d4be41a114336dbbad425ebb3c"
     }
   },
-  "localHTTP": {
-    "url": "http://127.0.0.1:8769/",
-    "servedBytesMatch": true
-  }
+  "publicURL": "https://toraikura.github.io/shubo-dive/"
 }
