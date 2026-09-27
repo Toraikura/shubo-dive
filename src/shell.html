@@ -20,5 +20,35 @@
 <section id="renderError" class="render-error" role="alertdialog" aria-modal="true" aria-labelledby="renderErrorTitle" aria-describedby="renderErrorText" hidden><div><p class="eyebrow">3D FLIGHT</p><h1 id="renderErrorTitle">3D描画を開始できませんでした</h1><p id="renderErrorText"></p><button id="reload3d" class="primary wide">再読み込み</button></div></section>
 <p id="storageNote" role="status" hidden>この環境では保存できません。終了するまで遊べます。</p>
 <noscript><div class="no-script">このゲームを遊ぶにはJavaScriptを有効にしてください。</div></noscript>
-<script id="core">/* INLINE_CORE */</script><script id="renderer">/* INLINE_RENDERER */</script><script id="app">/* INLINE_APP */</script>
+<script id="core">/* INLINE_CORE */</script><script id="renderer">/* INLINE_RENDERER */</script><script id="app">/* INLINE_APP */</script><script id="fpgAnalytics">
+(() => {
+  'use strict';
+  const MEASUREMENT_ID='G-3L1Q0VYVRH',SOURCE='shubo-dive',EXPERIENCE='SHUBO DIVE';
+  const enabled=location.hostname==='toraikura.github.io';
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+  const track=(name,detail={})=>{if(enabled)window.gtag('event',name,{experience:EXPERIENCE,page_path:location.pathname,...detail});};
+  window.satAnalytics={track};
+  const params=new URLSearchParams(location.search),key='sat_fpg_landing';let landing=null;
+  try{landing=sessionStorage.getItem(key);if(!landing){landing=JSON.stringify({path:location.pathname+location.search,referrer:document.referrer||'(direct)',utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||'',utm_campaign:params.get('utm_campaign')||''});sessionStorage.setItem(key,landing)}}catch(_){}
+  if(enabled){
+    const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(MEASUREMENT_ID);document.head.appendChild(s);
+    window.gtag('js',new Date());window.gtag('config',MEASUREMENT_ID,{content_group:EXPERIENCE,page_path:location.pathname+location.search});
+    let entry={};try{entry=JSON.parse(landing||'{}')}catch(_){}
+    track('experience_view',{landing_path:entry.path||location.pathname,landing_referrer:entry.referrer||document.referrer||'(direct)',utm_source:entry.utm_source||'',utm_medium:entry.utm_medium||'',utm_campaign:entry.utm_campaign||''});
+  }
+  try{const raw=sessionStorage.getItem('fpg_navigation_pending');if(raw){const p=JSON.parse(raw);if(p.to===SOURCE){sessionStorage.removeItem('fpg_navigation_pending');const age=Date.now()-Number(p.at||0);if(age>=0&&age<1800000)track('fpg_navigation_arrival',{from_game:p.from||'',to_game:SOURCE,placement:p.placement||''})}}}catch(_){}
+  document.addEventListener('click',event=>{
+    if(!(event.target instanceof Element))return;
+    const a=event.target.closest('a[data-fpg-destination]');
+    if(a){
+      const nav=a.closest('.fpg-nav'),placement=nav?.dataset.fpgPlacement||'menu',destination=a.dataset.fpgDestination||'',toGame=a.dataset.fpgTo||'';
+      track('fpg_navigation_click',{from_game:SOURCE,placement,destination,to_game:toGame,link_url:a.href});
+      if(destination==='game')try{sessionStorage.setItem('fpg_navigation_pending',JSON.stringify({from:SOURCE,to:toGame,placement,at:Date.now()}))}catch(_){}
+    }
+    const start=event.target.closest('#menu button[data-action="start"]');
+    if(start)track(document.querySelector('#menuContent .result-stats')?'game_retry':'game_start',{game_name:EXPERIENCE});
+  },{capture:true,passive:true});
+})();
+</script>
 </body></html>
