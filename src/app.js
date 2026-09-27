@@ -16,8 +16,24 @@
   }
   function release(){keys.clear();pendingBoost=false;pendingPulse=false;pendingCruise=false;lookX=0;lookY=0;lookGesture=null;stickX=0;stickZ=0;joystickId=null;$('stick').style.transform='translate(0,0)';}
   function notice(text,duration=3){toastText=text;toastUntil=performance.now()+duration*1000;$('toast').textContent=text;$('toast').classList.add('visible');}
+  function fpgNavigation(kind){
+    const placement=kind==='result'?'result':'menu',open=kind==='result'?' open':'';
+    return `<div class="fpg-nav" data-fpg-placement="${placement}">
+      <details${open}><summary>ほかのゲーム・赤坂で飲む・SATのお酒を見る</summary>
+        <nav aria-label="FERMENTATION PLAYGROUNDの次の行き先">
+          <a class="fpg-next" href="https://toraikura.github.io/shubo-world/" data-fpg-destination="game" data-fpg-to="shubo-world"><small>もう一本、遊んでいく？</small><strong>SHUBO</strong><span>蔵から木桶へ。発酵の小さな生命の世界へ →</span></a>
+          <a class="fpg-hub" href="https://toraikura.github.io/sat-fermentation-playground/" data-fpg-destination="hub">全7体験から選ぶ →</a>
+          <div class="fpg-places">
+            <a href="https://chilllabo.com/" data-fpg-destination="chill-labo"><small>CHILL LABO AKASAKA</small><strong>今度は、赤坂で飲み比べる。 ↗</strong></a>
+            <a href="https://sakearttokyo.com/" data-fpg-destination="sake-art-tokyo"><small>SAKE ART TOKYO</small><strong>SATのお酒・つくり手を見る。 ↗</strong></a>
+          </div>
+          <p>飲酒・お酒の購入は20歳以上の方へ。</p>
+        </nav>
+      </details>
+    </div>`;
+  }
   function setMenu(html,kind='panel'){
-    release();paused=true;screen=kind;$('menu').hidden=false;$('menu').classList.toggle('centered',kind!=='home');$('menuContent').innerHTML=html;$('hud').inert=true;
+    release();paused=true;screen=kind;$('menu').hidden=false;$('menu').classList.toggle('centered',kind!=='home');$('menuContent').innerHTML=html+fpgNavigation(kind);$('hud').inert=true;
     requestAnimationFrame(()=>{$('menuContent').querySelector('button:not(:disabled),input,select')?.focus({preventScroll:true});});
   }
   function closeMenu(){
