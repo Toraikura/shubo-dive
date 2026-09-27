@@ -10,6 +10,16 @@
 @media(max-height:570px){.flight-instruments{top:calc(175px + var(--safe-top));gap:4px;right:26px}.cruise-button{bottom:calc(122px + var(--safe-bottom));min-height:42px;right:30px}.flight-instruments small{display:none}.mission h1{font-size:19px}.mission-count{margin-top:10px}.ship-status{width:180px}}
 
 @media(max-width:650px) and (min-height:571px){#bossHud{left:20px;transform:none;width:calc(100vw - 160px)}}
+
+.fpg-nav{margin-top:18px;text-align:left;color:#dceeea;font:13px/1.55 system-ui,sans-serif;letter-spacing:normal}
+.fpg-nav *{box-sizing:border-box}.fpg-nav details{border:1px solid #80d3de33;border-radius:10px;background:#061a24cc;overflow:hidden}
+.fpg-nav summary{min-height:44px;padding:12px 13px;cursor:pointer;color:#a9d8d3;font-weight:700;touch-action:manipulation}
+.fpg-nav nav{padding:0 12px 12px}.fpg-nav a{display:block;color:inherit;text-decoration:none;border-radius:8px;min-height:44px}
+.fpg-nav a:focus-visible,.fpg-nav summary:focus-visible{outline:3px solid #d8fb8b;outline-offset:2px}.fpg-next{padding:13px;background:#174d40;color:#fff!important}
+.fpg-next small{display:block;font-size:10px;color:#d4ebe6}.fpg-next strong{display:block;margin:3px 0;font:800 19px/1.35 ui-monospace,monospace}.fpg-next span{display:block;font-size:12px}
+.fpg-hub{padding:12px 0;font-weight:700}.fpg-places{display:grid;grid-template-columns:1fr 1fr;gap:8px}.fpg-places a{padding:10px;border:1px solid #80d3de26;background:#0b2530}
+.fpg-places small{display:block;font:700 9px/1.4 ui-monospace,monospace;color:#8fb9b5}.fpg-places strong{display:block;margin-top:4px;font-size:13px}.fpg-nav nav>p{font-size:10px;color:#789aa1;margin:10px 0 0}
+@media(max-width:360px){.fpg-places{grid-template-columns:1fr}}
 </style></head>
 <body>
 <canvas id="world" aria-label="酒母の海の3Dゲーム画面"></canvas><canvas id="overlay" aria-hidden="true"></canvas><div class="vignette" aria-hidden="true"></div>
@@ -415,8 +425,24 @@ globalThis.ShuboRender=ShuboRender;
   }
   function release(){keys.clear();pendingBoost=false;pendingPulse=false;pendingCruise=false;lookX=0;lookY=0;lookGesture=null;stickX=0;stickZ=0;joystickId=null;$('stick').style.transform='translate(0,0)';}
   function notice(text,duration=3){toastText=text;toastUntil=performance.now()+duration*1000;$('toast').textContent=text;$('toast').classList.add('visible');}
+  function fpgNavigation(kind){
+    const placement=kind==='result'?'result':'menu',open=kind==='result'?' open':'';
+    return `<div class="fpg-nav" data-fpg-placement="${placement}">
+      <details${open}><summary>ほかのゲーム・赤坂で飲む・SATのお酒を見る</summary>
+        <nav aria-label="FERMENTATION PLAYGROUNDの次の行き先">
+          <a class="fpg-next" href="https://toraikura.github.io/shubo-world/" data-fpg-destination="game" data-fpg-to="shubo-world"><small>もう一本、遊んでいく？</small><strong>SHUBO</strong><span>蔵から木桶へ。発酵の小さな生命の世界へ →</span></a>
+          <a class="fpg-hub" href="https://toraikura.github.io/sat-fermentation-playground/" data-fpg-destination="hub">全7体験から選ぶ →</a>
+          <div class="fpg-places">
+            <a href="https://chilllabo.com/" data-fpg-destination="chill-labo"><small>CHILL LABO AKASAKA</small><strong>今度は、赤坂で飲み比べる。 ↗</strong></a>
+            <a href="https://sakearttokyo.com/" data-fpg-destination="sake-art-tokyo"><small>SAKE ART TOKYO</small><strong>SATのお酒・つくり手を見る。 ↗</strong></a>
+          </div>
+          <p>飲酒・お酒の購入は20歳以上の方へ。</p>
+        </nav>
+      </details>
+    </div>`;
+  }
   function setMenu(html,kind='panel'){
-    release();paused=true;screen=kind;$('menu').hidden=false;$('menu').classList.toggle('centered',kind!=='home');$('menuContent').innerHTML=html;$('hud').inert=true;
+    release();paused=true;screen=kind;$('menu').hidden=false;$('menu').classList.toggle('centered',kind!=='home');$('menuContent').innerHTML=html+fpgNavigation(kind);$('hud').inert=true;
     requestAnimationFrame(()=>{$('menuContent').querySelector('button:not(:disabled),input,select')?.focus({preventScroll:true});});
   }
   function closeMenu(){
@@ -553,6 +579,36 @@ globalThis.ShuboRender=ShuboRender;
     ])try{Promise.resolve(context.registerTool({...tool,inputSchema:{type:'object',properties:{},additionalProperties:false}},{signal:lifecycle.signal})).catch(()=>{});}catch(e){}
     window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
   }
+})();
+</script><script id="fpgAnalytics">
+(() => {
+  'use strict';
+  const MEASUREMENT_ID='G-3L1Q0VYVRH',SOURCE='shubo-dive',EXPERIENCE='SHUBO DIVE';
+  const enabled=location.hostname==='toraikura.github.io';
+  window.dataLayer=window.dataLayer||[];
+  window.gtag=window.gtag||function(){window.dataLayer.push(arguments);};
+  const track=(name,detail={})=>{if(enabled)window.gtag('event',name,{experience:EXPERIENCE,page_path:location.pathname,...detail});};
+  window.satAnalytics={track};
+  const params=new URLSearchParams(location.search),key='sat_fpg_landing';let landing=null;
+  try{landing=sessionStorage.getItem(key);if(!landing){landing=JSON.stringify({path:location.pathname+location.search,referrer:document.referrer||'(direct)',utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||'',utm_campaign:params.get('utm_campaign')||''});sessionStorage.setItem(key,landing)}}catch(_){}
+  if(enabled){
+    const s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(MEASUREMENT_ID);document.head.appendChild(s);
+    window.gtag('js',new Date());window.gtag('config',MEASUREMENT_ID,{content_group:EXPERIENCE,page_path:location.pathname+location.search});
+    let entry={};try{entry=JSON.parse(landing||'{}')}catch(_){}
+    track('experience_view',{landing_path:entry.path||location.pathname,landing_referrer:entry.referrer||document.referrer||'(direct)',utm_source:entry.utm_source||'',utm_medium:entry.utm_medium||'',utm_campaign:entry.utm_campaign||''});
+  }
+  try{const raw=sessionStorage.getItem('fpg_navigation_pending');if(raw){const p=JSON.parse(raw);if(p.to===SOURCE){sessionStorage.removeItem('fpg_navigation_pending');const age=Date.now()-Number(p.at||0);if(age>=0&&age<1800000)track('fpg_navigation_arrival',{from_game:p.from||'',to_game:SOURCE,placement:p.placement||''})}}}catch(_){}
+  document.addEventListener('click',event=>{
+    if(!(event.target instanceof Element))return;
+    const a=event.target.closest('a[data-fpg-destination]');
+    if(a){
+      const nav=a.closest('.fpg-nav'),placement=nav?.dataset.fpgPlacement||'menu',destination=a.dataset.fpgDestination||'',toGame=a.dataset.fpgTo||'';
+      track('fpg_navigation_click',{from_game:SOURCE,placement,destination,to_game:toGame,link_url:a.href});
+      if(destination==='game')try{sessionStorage.setItem('fpg_navigation_pending',JSON.stringify({from:SOURCE,to:toGame,placement,at:Date.now()}))}catch(_){}
+    }
+    const start=event.target.closest('#menu button[data-action="start"]');
+    if(start)track(document.querySelector('#menuContent .result-stats')?'game_retry':'game_start',{game_name:EXPERIENCE});
+  },{capture:true,passive:true});
 })();
 </script>
 </body></html>

@@ -9,3 +9,13 @@
 @media(max-height:570px){.flight-instruments{top:calc(175px + var(--safe-top));gap:4px;right:26px}.cruise-button{bottom:calc(122px + var(--safe-bottom));min-height:42px;right:30px}.flight-instruments small{display:none}.mission h1{font-size:19px}.mission-count{margin-top:10px}.ship-status{width:180px}}
 
 @media(max-width:650px) and (min-height:571px){#bossHud{left:20px;transform:none;width:calc(100vw - 160px)}}
+
+.fpg-nav{margin-top:18px;text-align:left;color:#dceeea;font:13px/1.55 system-ui,sans-serif;letter-spacing:normal}
+.fpg-nav *{box-sizing:border-box}.fpg-nav details{border:1px solid #80d3de33;border-radius:10px;background:#061a24cc;overflow:hidden}
+.fpg-nav summary{min-height:44px;padding:12px 13px;cursor:pointer;color:#a9d8d3;font-weight:700;touch-action:manipulation}
+.fpg-nav nav{padding:0 12px 12px}.fpg-nav a{display:block;color:inherit;text-decoration:none;border-radius:8px;min-height:44px}
+.fpg-nav a:focus-visible,.fpg-nav summary:focus-visible{outline:3px solid #d8fb8b;outline-offset:2px}.fpg-next{padding:13px;background:#174d40;color:#fff!important}
+.fpg-next small{display:block;font-size:10px;color:#d4ebe6}.fpg-next strong{display:block;margin:3px 0;font:800 19px/1.35 ui-monospace,monospace}.fpg-next span{display:block;font-size:12px}
+.fpg-hub{padding:12px 0;font-weight:700}.fpg-places{display:grid;grid-template-columns:1fr 1fr;gap:8px}.fpg-places a{padding:10px;border:1px solid #80d3de26;background:#0b2530}
+.fpg-places small{display:block;font:700 9px/1.4 ui-monospace,monospace;color:#8fb9b5}.fpg-places strong{display:block;margin-top:4px;font-size:13px}.fpg-nav nav>p{font-size:10px;color:#789aa1;margin:10px 0 0}
+@media(max-width:360px){.fpg-places{grid-template-columns:1fr}}
